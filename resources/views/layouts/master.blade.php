@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Интернет Магазин: @yield('title')</title>
+    <title>@lang('main.online_shop'): @yield('title')</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -17,28 +17,28 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{route('index')}}">Интернет Магазин</a>
+            <a class="navbar-brand" href="{{route('index')}}">@lang('main.online_shop')</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{route('index')}}">Все товары</a></li>
-                <li ><a href="{{route('categories')}}">Категории</a>
+                <li @routeactive('index')> <a href="{{route('index')}}">@lang('main.all_products')</a></li>
+                <li  @routeactive('categor*')><a href="{{route('categories')}}">@lang('main.categories')</a>
                 </li>
-                <li ><a href="{{route('basket')}}">В корзину</a></li>
-                <li><a href="{{route('index')}}">Сбросить проект в начальное состояние</a></li>
-                <li><a href="http://internet-shop.tmweb.ru/locale/en">en</a></li>
+                <li  @routeactive('basket*')><a href="{{route('basket')}}">@lang('main.basket')</a></li>
+                <li><a href="{{route('locale','en')}}">en</a></li>
+                <li><a href="{{route('locale','ru')}}">ru</a></li>
             </ul>
             @guest
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{route('login')}}">Войти</a></li>
-                <li><a href="{{route('register')}}">Регистрация</a></li>
+                <li><a href="{{route('login')}}">@lang('main.sign_in')</a></li>
+                <li><a href="{{route('register')}}">@lang('main.sign_up')</a></li>
             </ul>
             @endguest
 
             @auth
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{route('home')}}">Админка</a></li>
-                <li><a href="{{route('get-logout')}}">Выйти</a></li>
+                <li><a href="{{route('home')}}">@lang('main.admin')</a></li>
+                <li><a href="{{route('get-logout')}}">@lang('main.logout')</a></li>
             </ul>
                 @endauth
 

@@ -32,7 +32,7 @@ class AuthRequest extends FormRequest
         return $rules;
     }
 
-    public function messages()
+ /*   public function messages()
     {
         return [
             'required' => 'Поле :attribute обязательно для ввода',
@@ -40,5 +40,5 @@ class AuthRequest extends FormRequest
             'email' => 'Ошибка ввода почты',
 
         ];
-    }
+    }*/
 }

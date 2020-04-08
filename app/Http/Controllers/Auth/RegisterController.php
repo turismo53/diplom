@@ -29,8 +29,10 @@ class RegisterController extends Controller
         $user = Auth::user();
         if($user->is_admin)
         return route('home');
-        else
-        return route('index');
+        else{
+                  session()->flash('success', 'Вы успешно зарегестрированны!');
+                return route('index');
+            }
     }
     /**
      * Where to redirect users after registration.
@@ -86,5 +88,5 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
- 
+
 }

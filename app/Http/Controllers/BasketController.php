@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class BasketController extends Controller
 {
     public function basket(){
+
         $orderId = session('orderId');
         if(!is_null($orderId)){
             $order = Order::findOrFail($orderId);
@@ -19,6 +20,7 @@ class BasketController extends Controller
     }
 
     public function basketPlace(){
+
         $orderId = session('orderId');
         if(is_null($orderId)){
             return redirect()->route('index');
@@ -29,7 +31,7 @@ class BasketController extends Controller
         if(Auth::check()){
             return view('order',compact('order'));
         }
-        else 
+        else
         return view('orderGuest',compact('order'));
         }
 

@@ -2,30 +2,30 @@
 
 @section('title','Корзина' )
 
-@section('content') 
+@section('content')
 
-                    
-                    
-                 
-                    
-                    
-                            <h1>Корзина</h1>
-    <p>Оформление заказа</p>
+
+
+
+
+
+                            <h1>@lang('basket.basket')</h1>
+    <p>@lang('basket.order')</p>
     <div class="panel">
        @foreach($order->products as $product)
-   
+
         <a href="{{ route('product', [$product->category->code, $product->code]) }}">     {{$product->name}}</a>
         <form action="{{ route('basket-remove',[$product] )}}" method="post">
-        <button type="submit">удалить</button>
+        <button type="submit">@lang('basket.delete')</button>
         @csrf
         </form>
         <br/>
        @endforeach
 
        <form action="{{ route('basket-place')}}" method="get">
-        <button type="submit">оформить</button>
+        <button type="submit">@lang('basket.checkout')</button>
     </div>
 
- 
+
 
 @endsection
