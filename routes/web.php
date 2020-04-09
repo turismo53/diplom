@@ -9,18 +9,25 @@ Route::middleware(['set_locale'])-> group (function(){
         'confirm'=>false,
         'verify'=>false,
     ]);
+
+
+    Route::middleware(['auth'])-> group (function(){
+
+        Route::get('Person/orders/home','Person\OrderController@index')->name('order.index.person');
+        Route::get('Person/orders/{order}','Person\OrderController@show')->name('orders.show.person');
     Route::group([
     'namespace'=>'Admin',
-    'middleware'=>'auth',
     'prefix'=>'admin'
 ], function (){
     Route::group(['middleware'=>'is_admin'], function (){
         Route::get('/orders/home','OrderController@index')->name('home');
         Route::get('/orders/{order}','OrderController@show')->name('orders.show');
+        Route::resource('order', 'OrderController');
         Route::resource('categories','CategoryController');
         Route::resource('products', 'ProductController');
     });
 });
+    });
 
 
 

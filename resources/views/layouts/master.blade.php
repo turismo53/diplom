@@ -37,7 +37,12 @@
 
             @auth
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{route('home')}}">@lang('main.admin')</a></li>
+                @admin
+                    <li><a href="{{route('home')}}">@lang('main.admin')</a></li>
+                    @else
+                    <li><a href="{{route('order.index.person')}}">Личный Кабинет</a></li>
+                    @endadmin
+
                 <li><a href="{{route('get-logout')}}">@lang('main.logout')</a></li>
             </ul>
                 @endauth

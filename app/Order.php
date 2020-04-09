@@ -36,4 +36,9 @@ class Order extends Model
             return true;
         }else return false;
         }
+
+        public function saveStatus($status){
+            $this->status=$status;
+            $this->save();
+        }
 }

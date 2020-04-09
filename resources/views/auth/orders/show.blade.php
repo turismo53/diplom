@@ -14,7 +14,7 @@
                         <thead>
                         <tr>
                             <th>Название</th>
-                            <th>Кол-во</th>
+
                             <th>Цена</th>
 
                         </thead>
@@ -28,14 +28,18 @@
                                         {{ $product->name }}
                                     </a>
                                 </td>
-                                <td><span class="badge">1</span></td>
+
                                 <td>{{ $product->price }} руб.</td>
 
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="3">Общая стоимость:</td>
+                            <td colspan="1">Общая стоимость:</td>
                             <td>{{ $order->getFullPrice() }} руб.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">Состояние заказа</td>
+                            <td>{{ $order->status }}.</td>
                         </tr>
                         </tbody>
                     </table>
@@ -44,4 +48,22 @@
             </div>
         </div>
     </div>
+
+    @admin
+    <form method="POST" enctype="multipart/form-data"  action="{{ route('order.update', $order) }}">
+        @method('PUT')
+        @csrf
+        <div class="input-group row">
+            <label for="category_id" class="col-sm-2 col-form-label">Статус </label>
+            <div class="col-sm-6">
+                <select name="status" id="category_id" class="form-control">
+                    <option value="Ждет оплаты"> Ждет Оплаты  </option>
+                    <option value="Готов к отправке"> Готов к отправке </option>
+                    <option value="Отправлен"> Отправлен </option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-success">Сохранить</button>
+    </form>
+    @endadmin
 @endsection

@@ -24,7 +24,7 @@
                     Сумма
                 </th>
                 <th>
-                    Действия
+                    Статус
                 </th>
             </tr>
             @foreach($orders as $order)
@@ -34,15 +34,24 @@
                     <td>{{ $order->phone }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     <td>{{ $order->getFullPrice() }} руб.</td>
+                    <td>{{ $order->status }} </td>
                     <td>
                         <div class="btn-group" role="group">
                             <a class="btn btn-success" type="button"
-                               href="{{route('orders.show',$order)}}">Открыть</a>
+                               href="
+                                @admin
+                               {{route('orders.show',$order)}}
+                                   @else
+                               {{route('orders.show.person',$order)}}
+                               @endadmin
+                                   ">Открыть</a>
                         </div>
                     </td>
                 </tr>
+
             @endforeach
             </tbody>
         </table>
+
     </div>
 @endsection
