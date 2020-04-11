@@ -54,7 +54,6 @@
 
 
     @else
-
         <img height="300px"
              src="{{ Storage::url($order->image) }}">
         <br>
@@ -63,6 +62,7 @@
 
 
         @endif
+
     @admin
     <form method="POST" action="{{ route('order.update', $order) }}">
         @method('PUT')

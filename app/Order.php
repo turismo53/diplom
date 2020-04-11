@@ -36,6 +36,8 @@ class Order extends Model
             $this->adres = Auth::User()->street;
             $this->done = 1;
             $this->user_id=Auth::id();
+            if(!isset($image['name']))
+
             $this->image=$image;
             $this->save();
             session()->forget('orderId');
