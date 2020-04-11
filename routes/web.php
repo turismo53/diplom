@@ -52,7 +52,7 @@ Route::middleware(['set_locale'])-> group (function(){
 
 
 
-    Route::get('/send','MailController@createdAccount')->name('createAcc');
+    Route::post('/send','MailController@createdAccount')->name('createAcc');
 
     Route::get('/categories', 'MainController@categories')->name('categories');
 

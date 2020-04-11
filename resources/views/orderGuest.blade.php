@@ -6,7 +6,7 @@
 @section('content')
 
 
-<form method="GET" action="{{route('createAcc')}}">
+<form method="POST" action="{{route('createAcc')}}">
 
 
 
