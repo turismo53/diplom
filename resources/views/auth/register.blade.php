@@ -12,9 +12,9 @@
         <div class=" alert alert-danger"> {{$message}} </div>
         @enderror
                 <div class="form-group row">
-          
+
                     <label for="name" class="col-md-4 col-form-label text-md-right">Имя</label>
-      
+
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name"
                                value="">
@@ -31,6 +31,59 @@
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control"
                                name="email" value="" >
+
+                    </div>
+                </div>
+
+                @error('phone')
+                <div class=" alert alert-danger"> {{$message}} </div>
+                @enderror
+                <div class="form-group row">
+                    <label for="phone" class="col-md-4 col-form-label text-md-right">Телефон</label>
+
+                    <div class="col-md-6">
+                        <input id="phone" type="phone" class="form-control"
+                               name="phone" value="" >
+
+                    </div>
+                </div>
+
+
+                @error('city')
+                <div class=" alert alert-danger"> {{$message}} </div>
+                @enderror
+                <div class="form-group row">
+                    <label for="city" class="col-md-4 col-form-label text-md-right">Город</label>
+
+                    <div class="col-md-6">
+                        <input id="city" type="phone" class="form-control"
+                               name="city" value="" >
+
+                    </div>
+                </div>
+
+                @error('street')
+                <div class=" alert alert-danger"> {{$message}} </div>
+                @enderror
+                <div class="form-group row">
+                    <label for="street" class="col-md-4 col-form-label text-md-right">Улица</label>
+
+                    <div class="col-md-6">
+                        <input id="street" type="street" class="form-control"
+                               name="street" value="" >
+
+                    </div>
+                </div>
+
+                @error('street')
+                <div class=" alert alert-danger"> {{$message}} </div>
+                @enderror
+                <div class="form-group row">
+                    <label for="mail_index" class="col-md-4 col-form-label text-md-right">Почтовый индекс</label>
+
+                    <div class="col-md-6">
+                        <input id="mail_index" type="mail_index" class="form-control"
+                               name="mail_index" value="" >
 
                     </div>
                 </div>

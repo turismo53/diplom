@@ -3,7 +3,7 @@
 @section('title','Главная')
 
 @section('content')
- 
+
                             <h1>Все товары</h1>
      <!--   <form method="GET" action="http://internet-shop.tmweb.ru">
         <div class="filters row">
@@ -39,6 +39,9 @@
     @endforeach
 
 
+        @isset(Auth::User()->name)
+        <p>asdasda</p>
+        @endisset
     </div>
-  
+
 @endsection

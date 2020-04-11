@@ -36,9 +36,17 @@ public function index(){
 
     public function update(Request $request, Order $order)
     {
+        //dd($request);
         $params = $request->status;
-        $order->saveStatus($params);
+        $order->saveStatus($request->status, $request->individual_price);
         return view('auth.orders.show',compact('order'));
     }
+
+    public function changePrice(Request $request,Order $order ){
+        $params = $request->individual_price;
+        $order->savePrice($params);
+        return view('auth.orders.show',compact('order'));
+    }
+
 
 }

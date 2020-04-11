@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 class LoginController extends Controller
 {
     /*
@@ -22,15 +25,17 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     protected  function redirectTo(){
+        $uri=Route::getFacadeRoot()->current()->uri();
+        if($uri=='login') {
+            $user = Auth::user();
+            if ($user->is_admin) {
+                session()->flash('success', 'Вы успешно авторизованны как админ!');
+                return route('home');
+            } else {
 
-        $user = Auth::user();
-        if($user->is_admin){
-            session()->flash('success', 'Вы успешно авторизованны как админ!');
-        return route('home');
-        }
-        else{
-            session()->flash('success', 'Вы успешно авторизованны!');
-        return route('index');
+                session()->flash('success', 'Вы успешно авторизованны!');
+                return route('index');
+            }
         }
     }
 

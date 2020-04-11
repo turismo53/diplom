@@ -63,6 +63,11 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255', 'min:4'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+             'city'=> ['required'],
+             'phone'=> ['required'],
+             'street'=> ['required'],
+             'mail_index'=> ['required'],
+
         ];
        $messages= [
             'required' => 'Это поле обязательно для ввода',
@@ -80,12 +85,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+   public function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+            'street' => $data['street'],
+            'city' => $data['city'],
+            'mail_index' => $data['mail_index'],
         ]);
     }
 

@@ -25,6 +25,7 @@
                 <li  @routeactive('categor*')><a href="{{route('categories')}}">@lang('main.categories')</a>
                 </li>
                 <li  @routeactive('basket*')><a href="{{route('basket')}}">@lang('main.basket')</a></li>
+                <li  @routeactive('extra*')><a href="{{route('extra.order')}}">Портерт на заказ</a></li>
                 <li><a href="{{route('locale','en')}}">en</a></li>
                 <li><a href="{{route('locale','ru')}}">ru</a></li>
             </ul>

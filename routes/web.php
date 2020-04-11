@@ -10,7 +10,9 @@ Route::middleware(['set_locale'])-> group (function(){
         'verify'=>false,
     ]);
 
-
+    Route::get('extraOrder','Person\OrderController@individualOrderForm')->name('extra.order');
+    Route::post('extraOrder','Person\OrderController@individualOrder')->name('extra.order.confirm');
+    Route::post('extraOrderAuth','Person\OrderController@authIndividualOrder')->name('extra.authOrder.confirm');
     Route::middleware(['auth'])-> group (function(){
 
         Route::get('Person/orders/home','Person\OrderController@index')->name('order.index.person');
@@ -22,6 +24,7 @@ Route::middleware(['set_locale'])-> group (function(){
     Route::group(['middleware'=>'is_admin'], function (){
         Route::get('/orders/home','OrderController@index')->name('home');
         Route::get('/orders/{order}','OrderController@show')->name('orders.show');
+        Route::post('/orders/changePrice','OrderController@changePrice')->name('order.price');
         Route::resource('order', 'OrderController');
         Route::resource('categories','CategoryController');
         Route::resource('products', 'ProductController');
@@ -49,12 +52,15 @@ Route::middleware(['set_locale'])-> group (function(){
 
 
 
+    Route::get('/send','MailController@createdAccount')->name('createAcc');
 
     Route::get('/categories', 'MainController@categories')->name('categories');
 
     Route::get('/{category}', 'MainController@category')->name('category');
 
-    Route::get('/{category}/{product?}', 'MainController@product')->name('product');});
+    Route::get('/{category}/{product?}', 'MainController@product')->name('product');
+
+});
 
 
 
