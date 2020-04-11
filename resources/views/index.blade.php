@@ -39,9 +39,6 @@
     @endforeach
 
 
-        @isset(Auth::User()->name)
-        <p>asdasda</p>
-        @endisset
     </div>
 
 @endsection
