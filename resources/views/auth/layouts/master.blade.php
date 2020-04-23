@@ -86,9 +86,13 @@
 
             <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 admin">
+                    @admin
                     <li><a class="admin" href="{{ route('categories.index') }}">Категории</a></li>
                     <li><a class="admin"href="{{ route('products.index') }}">Товары</a>  </li>
                     <li><a  class="admin"href="{{ route('home') }}">Заказы</a></li>
+                    @else
+                        <li><a class="admin"href="{{route('order.index.person')}}">Мои заказы</a></li>
+                    @endadmin
                 </ul>
 
                 @auth

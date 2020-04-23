@@ -100,7 +100,7 @@ $(window).scroll(function () {
     $('#back-to-top').fadeOut("slow");
   }
 });
-$("#back-to-top").on("click", function () {
+$("#back-to-top").on("click touchstart", function () {
   $(window).scrollTop(0);
 });
 

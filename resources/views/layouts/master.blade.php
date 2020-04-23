@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('main.online_shop'): @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -33,12 +33,12 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li> <a @routeactive('index') href="{{route('index')}}">@lang('main.all_products')</a></li>
-            <li><a @routeactive('categor*') href="{{route('categories')}}">@lang('main.categories')</a> </li>
-            <li><a @routeactive('basket*') href="{{route('basket')}}">@lang('main.basket')</a></li>
-            <li><a @routeactive('extra*') href="{{route('extra.order')}}">@lang('main.individual_order')</a></li>
-            <li><a @routeactive('feedback*') href="{{route('feedback.index')}}">@lang('main.feedback')</a></li>
-            <li  ><a @routeactive('posts*')href="{{route('posts.index')}}">@lang('main.blog')</a></li>
+            <li  @routeactive('index')> <a @routeactive('index') href="{{route('index')}}">@lang('main.all_products')</a></li>
+            <li  @routeactive('categor*')><a href="{{route('categories')}}">@lang('main.categories')</a> </li>
+            <li  @routeactive('basket*')><a  href="{{route('basket')}}">@lang('main.basket')</a></li>
+            <li  @routeactive('extra*')><a  href="{{route('extra.order')}}">@lang('main.individual_order')</a></li>
+            <li  @routeactive('feedback*')><a  href="{{route('feedback.index')}}">@lang('main.feedback')</a></li>
+            <li  @routeactive('posts*')><a href="{{route('posts.index')}}">@lang('main.blog')</a></li>
             <li><a href="{{route('locale','en')}}">en</a></li>
             <li><a href="{{route('locale','ru')}}">ru</a></li>
         </ul>
@@ -60,7 +60,7 @@
                     <li><a href="{{route('get-logout')}}">@lang('main.logout')</a></li>
             </ul>
         @endauth
-
+        @csrf
     </div>
 </nav>
 
@@ -68,7 +68,7 @@
 
 <div class="starter-template">
     <div class="container">
-        <button id="back-to-top" onclick=""><i class="fa fa-sort-up fa-5x"></i></button>
+
         @if(session()->has('success'))
             <p class="alert alert-success">{{ session()->get('success') }}</p>
         @endif
@@ -76,9 +76,11 @@
             <p class="alert alert-warning">{{ session()->get('warning') }}</p>
         @endif
         @yield('content')
+            <button id="back-to-top" onclick=""><i class="fa fa-sort-up fa-4x"></i></button>
         </div>
     </div>
 <script src="/js/scroll.js"></script>
+
 </body>
 
 </html>

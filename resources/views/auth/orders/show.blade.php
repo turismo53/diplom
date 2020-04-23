@@ -9,8 +9,11 @@
                 <div class="panel">
                     <h1>Заказ №{{ $order->id }}</h1>
                     <p>Заказчик: <b>{{ $order->name }}</b></p>
-                    <p>Номер теелфона: <b>{{ $order->phone }}</b></p>
+                    <p>Номер телфона: <b>{{ $order->phone }}</b></p>
                     <p>Улица: <b>{{ $order->adres }}</b></p>
+                    <p>Город: <b>{{ $order->user->city }}</b></p>
+                    <p>Почтовый индекс: <b>{{ $order->user->mail_index }}</b></p>
+
                     @if($order->image==null)
                     <table class="table table-striped">
 
@@ -57,7 +60,8 @@
         <img height="300px"
              src="{{ Storage::url($order->image) }}">
         <br>
-        <p>Цена:  @if($order->individual_price==null) В обработке @else {{$order->individual_price}} @endif</p>
+        <p>Цена:  @if($order->individual_price==null) В обработке @else {{$order->individual_price}}р. @endif</p>
+        <p>Состояние заказа: {{ $order->status }}. </p>
 
 
 
@@ -68,7 +72,7 @@
         @method('PUT')
         @csrf
         <div class="input-group row">
-            <label for="status" class="col-sm-2 col-form-label">Статус </label>
+            <label for="status" class="col-sm-6 col-form-label">Статус </label>
             <div class="col-sm-6">
                 <select name="status" id="status" class="form-control" >
                     <option @if($order->status=='Ждет оплаты') selected="selected" @endif value="Ждет оплаты"> Ждет Оплаты  </option>
@@ -76,20 +80,21 @@
                     <option @if($order->status=='Отправлен') selected="selected" @endif value="Отправлен"> Отправлен </option>
                 </select>
             </div>
-            <button class="btn btn-success">Сохранить</button>
 
+        </div>
             <br>
+            <div class="input-group row">
         @if($order->individual_price==null&&$order->image!=null)
             <br>
-        <label for="individual_price" class="col-sm-2 col-form-label">Установить цену на портрет </label>
+        <label for="individual_price" class="col-sm-6 col-form-label">Цена на портрет:</label>
         <div class="col-sm-6">
             <input type="number" name="individual_price" id="individual_price" class="form-control" value="{{$order->individual_price}}">
 
         </div>
-        <button class="btn btn-success">Сохранить</button>
+
         @endif
         </div>
-
+        <button class="btn btn-success">Сохранить</button>
     </form>
     @endadmin
 @endsection

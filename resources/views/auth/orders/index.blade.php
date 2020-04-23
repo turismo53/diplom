@@ -33,7 +33,16 @@
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->phone }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
+                    @if($order->getFullPrice()!=0)
                     <td>{{ $order->getFullPrice() }} руб.</td>
+                    @else
+
+                        @if($order->individual_price==null)
+                            <td>0 руб.</td>
+                        @else
+                        <td>{{ $order->individual_price }} руб.</td>
+                        @endif
+                        @endif
                     <td>{{ $order->status }} </td>
                     <td>
                         <div class="btn-group" role="group">
