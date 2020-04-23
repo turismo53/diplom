@@ -9,7 +9,8 @@ Route::middleware(['set_locale'])-> group (function(){
         'confirm'=>false,
         'verify'=>false,
     ]);
-
+    Route::resource('feedback','feedbackController');
+    Route::resource('posts', 'PostController');
     Route::get('extraOrder','Person\OrderController@individualOrderForm')->name('extra.order');
     Route::post('extraOrder','Person\OrderController@individualOrder')->name('extra.order.confirm');
     Route::post('extraOrderAuth','Person\OrderController@authIndividualOrder')->name('extra.authOrder.confirm');

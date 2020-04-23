@@ -17,43 +17,61 @@
                 <div>
                     <p>@lang('basket.info')</p>
 
-                    <div class="container">
-                        <div class="form-group">
-                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">@lang('basket.name'): </label>
-                            <div class="col-lg-4">
+
+                        <div class="form-group row">
+                            <label for="name" class="control-label col-lg-3">@lang('basket.name'): </label>
+                            <div class="col-lg-7">
                                 <input type="text" name="name" id="name" value="{{@Auth::user()->name}}" class="form-control">
                             </div>
                         </div>
+
                         <br>
-                        <br>
-                        <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">@lang('basket.phone'): </label>
-                            <div class="col-lg-4">
+                        <div class="form-group row">
+                            <label for="phone" class="control-label col-lg-3">@lang('basket.phone'): </label>
+                            <div class="col-lg-7">
                                 <input type="text" name="phone" id="phone" value="{{@Auth::user()->phone}}" class="form-control">
                             </div>
                         </div>
+
                         <br>
-                        <br>
-                                                    <div class="form-group">
-                                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Email: </label>
-                                <div class="col-lg-4">
+                    <div class="form-group row">
+                                <label for="name" class="control-label  col-lg-3">Email: </label>
+                                <div class="col-lg-7">
                                     <input type="text" name="email" id="email" value="{{@Auth::user()->email}}" class="form-control">
                                 </div>
                             </div>
                                             </div>
                     <br>
 
-                    <div class="form-group">
-                        <label for="city" class="control-label col-lg-offset-3 col-lg-2">Город: </label>
-                        <div class="col-lg-4">
+                    <div class="form-group row">
+                        <label for="city" class="control-label  col-lg-3">@lang('basket.city'): </label>
+                        <div class="col-lg-7">
                             <input type="text" name="city" id="city" value="{{@Auth::user()->city}}" class="form-control">
                         </div>
                     </div>
+
+                <br>
+
+                <div class="form-group row">
+                    <label for="city" class="control-label  col-lg-3">@lang('basket.street'): </label>
+                    <div class="col-lg-7">
+                        <input type="text" name="city" id="city" value="{{@Auth::user()->street}}" class="form-control">
+                    </div>
                 </div>
+
+                <br>
+
+                <div class="form-group row">
+                    <label for="city" class="control-label  col-lg-3">@lang('basket.mail_index'): </label>
+                    <div class="col-lg-7">
+                        <input type="text" name="city" id="city" value="{{@Auth::user()->mail_index}}" class="form-control">
+                    </div>
+                </div>
+
                 <br>
                     @csrf
                          <input type="submit" class="btn btn-success" value="@lang('basket.checkout')">
-                </div>
+
             </form>
 @endauth
 

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -42,6 +43,20 @@ class User extends Authenticatable
     }
     public function orders(){
         return $this->hasMany(Order::class);
+    }
+
+    public function feedback(){
+        return $this->hasMany(Feedback::class);
+    }
+
+    public function hasCompletedOrders(){
+        if(Auth::check())
+       $orders=$this->orders;
+        foreach ($orders as $order){
+            if($order->status=='Отправлен')
+                return true;
+        }
+            return false;
     }
 
 }

@@ -105,7 +105,7 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">Картинка: </label>
                             <div class="col-md-6">
                                 <label class="btn btn-default btn-file">
-                                    Загрузить <input type="file" style="display: none;" name="image" id="image">
+                                    <input id="image" name="image" type="file" accept=".jpg, .jpeg, .png">
                                 </label>
                             </div>
                         </div>

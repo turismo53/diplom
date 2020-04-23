@@ -15,4 +15,9 @@ public function category(){
     return $this->belongsTo(Category::class);
 }
 
+public function getTotalPrice(){
+    return $this->price*$this->pivot->count;
+
+}
+
 }

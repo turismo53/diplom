@@ -14,7 +14,8 @@
     <div class="panel">
        @foreach($order->products as $product)
 
-        <a href="{{ route('product', [$product->category->code, $product->code]) }}">     {{$product->name}}</a>
+        <a href="{{ route('product', [$product->category->code, $product->code]) }}">{{$product->name}}</a>  {{$product->pivot->count}} {{$product->getTotalPrice()}}
+
         <form action="{{ route('basket-remove',[$product] )}}" method="post">
         <button type="submit">@lang('basket.delete')</button>
         @csrf

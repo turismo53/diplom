@@ -6,6 +6,8 @@ use App\Order;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
+use App\User;
+
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +16,8 @@ use Illuminate\Support\Facades\Hash;
 class MainController extends Controller
 {
     public function index(){
-        $products = Product::get();
+
+        $products = Product::paginate(5);
         return view('index', compact('products'));
     }
 

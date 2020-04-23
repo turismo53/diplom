@@ -9,7 +9,9 @@ return [
     'sign_in'=>'Войти',
     'sign_up'=>'Зарегестрироваться',
     'admin'=>'Админка',
-    'logout'=>'Выйти'
-
+    'logout'=>'Выйти',
+    'individual_order'=>'Заказать портерт',
+    'feedback'=>'Отзывы',
+    'blog'=>'Блог'
 ];
 

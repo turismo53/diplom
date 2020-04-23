@@ -1,0 +1,44 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+.navbar-nav{
+    li{
+        padding-left: 10px;
+        a{
+            color: whitesmoke;
+            padding: 15px!important;
+        }
+    }
+    .active{
+        background-color: red;
+
+    }
+}
+
+.thumbnail{
+    border: 1px solid;
+    padding: 15px;
+}
+ .post{
+     clear: both;
+     border: 1px solid;
+ }
+ .admin{
+     color: black!important;
+ }
+ .main-brand{
+     color: whitesmoke!important;
+ }
+ #back-to-top{
+     position: fixed;
+     right: 25px;
+     bottom: 15px;
+     display: none;
+   border: none;
+     background: transparent;
+     outline: none;
+ }
+
+
+ html{
+     scroll-behavior: smooth;
+ }

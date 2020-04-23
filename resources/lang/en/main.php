@@ -9,7 +9,10 @@ return [
     'sign_in'=>'Sign in',
     'sign_up'=>'Sign up',
     'admin'=>'Admin panel',
-    'logout'=>'Logout'
+    'logout'=>'Logout',
+    'individual_order'=>'Order a portrait',
+    'feedback'=>'Feedback',
+    'blog'=>'Blog'
 
 ];
 

@@ -17,7 +17,7 @@ class OrderController extends Controller
 public function index(){
     $user = Auth::user();
   //  dd([$user->name,$user->email,$user->password]);
-    $orders = Order::where('done',1)->get();
+    $orders = Order::where('done',1)->paginate(5);
     return view('auth.orders.index',compact('orders'));
 
 }

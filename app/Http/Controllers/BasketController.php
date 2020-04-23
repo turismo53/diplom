@@ -64,15 +64,17 @@ class BasketController extends Controller
         }
 
 
-        if(Auth::check()){
-            $order->user_id = Auth::id();
-            $order->save();
+        if ($order->products->contains($productId)) {
+            $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
+            $pivotRow->count++;
+            $pivotRow->update();
+        } else {
+            $order->products()->attach($productId);
         }
 
 
-        $success=$order->products()->attach($productId);
         $product=Product::find($productId);
-        session()->flash('success', $product->name . ' успешно добавлен');
+        session()->flash('success',  $product->name. __('flash.add_product') );
 
         return redirect()->route('basket');
 
@@ -84,17 +86,30 @@ class BasketController extends Controller
             return view('basket',compact('order'));
         }
         $order=Order::find($orderId);
-        $order->products()->detach($productId);
+
+        if ($order->products->contains($productId)) {
+            $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
+            if ($pivotRow->count < 2) {
+                $order->products()->detach($productId);
+            } else {
+                $pivotRow->count--;
+                $pivotRow->update();
+            }
+        }
         $product=Product::find($productId);
-        session()->flash('warning', $product->name . ' успешно удален из заказа');
+
+        session()->flash('warning', $product->name . __('flash.delete_product'));
+
+
+
+
+
 
         if ($order->products->count() == 0) {
-            session()->flash('warning', 'Ваша корзина пуста!');
+            session()->flash('warning', __('flash.empty_basket'));
             return redirect()->route('index');
         }
-        return view('basket',compact('order'));
-
-
+        return redirect()->route('basket');
 
     }
 }
