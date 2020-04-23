@@ -16,18 +16,20 @@
             <br>
             <p>{{$post->description}}</p>
             <br>
-            @admin
+
             <div class="btn-group" role="group">
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     <a class="btn btn-success" type="button"
                        href="{{ route('posts.show', $post) }}">Открыть</a>
+                    @admin
                     <a class="btn btn-warning" type="button"
                        href="{{ route('posts.edit', $post) }}">Редактировать</a>
                     @csrf
                     @method('DELETE')
                     <input class="btn btn-danger" type="submit" value="Удалить"></form>
+                @endadmin
             </div>
-            @endadmin
+
             </div>
         @endforeach
 
