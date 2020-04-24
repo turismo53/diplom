@@ -1,9 +1,6 @@
-<div class="col-sm-6 col-md-12">
+<div class=" col-12 p-0 m-0">
     <div class="thumbnail">
-        <div class="labels">
 
-
-                    </div>
         <img src="{{ Storage::url($product->image) }}" alt="iPhone X 64GB">
         <div class="caption">
             <h3>{{$product->name}}</h3>

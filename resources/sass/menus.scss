@@ -16,44 +16,128 @@
 }
 
 .thumbnail{
-    border: 1px solid;
+   // border: 1px solid;
     padding: 15px;
 }
- .post{
-     clear: both;
-     border: 1px solid;
- }
- .admin{
-     color: black!important;
- }
- .main-brand{
-     color: whitesmoke!important;
- }
- #back-to-top{
-     position: fixed;
-     right: 0px;
-     bottom: 15px;
-     display: none;
-     border: none;
-     background: transparent;
-     outline: none;
-     z-index: 999;
- }
+.post{
+    clear: both;
+    border: 1px solid;
+}
+.admin{
+    color: black!important;
+}
+.main-brand{
+    color: whitesmoke!important;
+}
+#back-to-top{
+    position: fixed;
+    right: 2px;
+    bottom: 15px;
+    display: none;
+    border: none;
+    background: transparent;
+    outline: none;
+    z-index: 999;
+    color: white;
+}
+
+body{
+
+    background-image: linear-gradient(90deg, rgba(23,74,94,0.742734593837535) 2%, rgba(0,0,0,1) 46%, rgba(0,0,0,0.8883928571428571) 91%),url("http://fullhdwallpapers.ru/image/nature/13429/strashnyy-les.jpg");
+    background-attachment: fixed;
+    color:ghostwhite;
+}
+
+.page-link{
+    background-color: transparent!important;
+}
 
 
- html{
-     scroll-behavior: smooth;
- }
+.page-item.active .page-link {
+    border-color: #34ce57;
 
- @media (max-width: 990px) {
-     .navbar-nav {
-         li {
-             padding-left: 0px!important;
-             margin-left: 0px!important;
-             padding: 10px 0;
-         }
-     }
-     body{
-         padding-right: 10px!important;
-     }
- }
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.hover-effect{
+    text-decoration: none!important;
+    display: inline-block;
+    position: relative;
+}
+
+#textFile{
+    color: white;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.hover-effect::after{
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    display: block;
+    content: "";
+    height: 3px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.card{
+    background-color: transparent;
+}
+
+#email, #password{
+    border-radius: 25px;
+    border: 2px solid limegreen;
+    background-color: #1b1e21;
+    transition: width .6s;
+}
+
+
+#email:focus, #password:focus{
+    border-color: blue;
+    width: 120%;
+}
+
+
+#main{
+    overflow: hidden;
+    position: relative;
+}
+
+#loader{
+    width:100%!important;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+.hover-effect:hover:after,
+.hover-effect:focus:after{
+    width: 100%;
+}
+.thumbnail img {
+    max-height: 300px!important;
+}
+
+
+@media (max-width: 990px) {
+    .navbar-nav {
+        li {
+            padding-left: 0px!important;
+            margin-left: 0px!important;
+            padding: 10px 0;
+        }
+    }
+
+}

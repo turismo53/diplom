@@ -105,7 +105,9 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">Картинка: </label>
                             <div class="col-md-6">
                                 <label class="btn btn-default btn-file">
-                                    <input id="image" name="image" type="file" accept=".jpg, .jpeg, .png">
+                                    <label  id="textFile"style="cursor: pointer" for="myFileUpload">Выберите файл</label>
+                                    <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="file">
+
                                 </label>
                             </div>
                         </div>

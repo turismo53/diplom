@@ -5,7 +5,10 @@
 @section('content')
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Авторизация</div>
+            <div class="card-header justify-content-center align-items-center">
+
+                <p class="text-center pl-lg-5 ml-lg-5">LOGIN</p>
+            </div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}" aria-label="Login">
@@ -34,7 +37,7 @@
                         </div>
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
+                        <div class="col-md-9 offset-5 offset-md-6 offset-lg-6">
                             <button type="submit" class="btn btn-primary">
                                 Войти
                             </button>
