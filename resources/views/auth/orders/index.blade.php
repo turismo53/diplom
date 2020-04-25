@@ -30,7 +30,7 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{ $order->id}}</td>
-                    <td>{{ $order->name }}</td>
+                    <td class="adaptive-admin-menu">{{ $order->name }}</td>
                     <td class="adaptive-admin-menu">{{ $order->phone }}</td>
                     <td class="adaptive-admin-menu">{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     @if($order->getFullPrice()!=0)
