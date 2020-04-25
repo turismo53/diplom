@@ -16,7 +16,6 @@ $(document).ready(function(){
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
-
                 }
             },
             {
@@ -31,7 +30,8 @@ $(document).ready(function(){
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: true
+                    dots: true,
+                    autoplay: false
                 }
             }
 
