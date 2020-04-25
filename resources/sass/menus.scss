@@ -251,3 +251,8 @@ padding:15px 10px;
     }
 
 }
+@media (max-width: 810px) {
+    .adaptive-product-image {
+        max-width: 280px;
+    }
+}
