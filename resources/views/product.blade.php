@@ -12,7 +12,8 @@
     <br>
      <form action="{{ route('basket-add',$tovar->id) }}" method="POST">
          <button type="submit" class="btn btn-success" role="button">Добавить в корзину</button>
+
            @csrf
-     </form>
+     </form>  <br>
 
 @endsection

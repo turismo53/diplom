@@ -25,6 +25,7 @@
 
        <form action="{{ route('basket-place')}}" method="get">
         <button type="submit">@lang('basket.checkout')</button>
+       </form>
     </div>
 
 

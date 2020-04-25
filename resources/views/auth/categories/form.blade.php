@@ -8,6 +8,7 @@
 
 @section('content')
     <div class="col-md-12">
+        <div id="main">
         @isset($category)
             <h1>Редактировать Категорию <b>{{ $category->name }}</b></h1>
         @else
@@ -54,13 +55,18 @@
                 <div class="input-group row">
                     <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                     <div class="col-sm-10">
-                        <label class="btn btn-default btn-file">
-                            <input id="image" name="image" type="file"  accept=".jpg, .jpeg, .png">
+                        <label class="btn btn-default btn-file" >
+
+                            <input style=" margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
+                            <br>
                         </label>
+
                     </div>
                 </div>
+                    <br>
                 <button class="btn btn-success">Сохранить</button>
             </div>
         </form>
+    </div>
     </div>
 @endsection

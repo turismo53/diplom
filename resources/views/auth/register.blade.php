@@ -5,14 +5,14 @@
 @section('content')
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Регистрация</div>
+
             <form method="POST" action="{{ route('register') }}" aria-label="Register">
                 @csrf
                 @error('name')
         <div class=" alert alert-danger"> {{$message}} </div>
         @enderror
                 <div class="form-group row">
-
+                    <div class="card-header col-12 text-center">Регистрация</div>
                     <label for="name" class="col-md-4 col-form-label text-md-right">Имя</label>
 
                     <div class="col-md-6">

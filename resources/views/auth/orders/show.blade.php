@@ -4,8 +4,11 @@
 
 @section('content')
     <div class="py-4">
-        <div class="container">
-            <div class="justify-content-center">
+        <div class="container ">
+            <div class="justify-content-center order">
+
+
+
                 <div class="panel">
                     <h1>Заказ №{{ $order->id }}</h1>
                     <p>Заказчик: <b>{{ $order->name }}</b></p>
@@ -52,8 +55,7 @@
                     <br>
                 </div>
             </div>
-        </div>
-    </div>
+
 
 
     @else
@@ -64,37 +66,38 @@
         <p>Состояние заказа: {{ $order->status }}. </p>
 
 
+    @endif
+            @admin
+            <form method="POST" action="{{ route('order.update', $order) }}">
+                @method('PUT')
+                @csrf
+                <label for="status" class="col-sm-6 col-form-label">Статус </label>
+                <div class="col-sm-12">
+                    <select name="status" id="status" class="form-control" >
+                        <option @if($order->status=='Ждет оплаты') selected="selected" @endif value="Ждет оплаты"> Ждет Оплаты  </option>
+                        <option @if($order->status=='Готов к отправке') selected="selected" @endif value="Готов к отправке"> Готов к отправке </option>
+                        <option @if($order->status=='Отправлен') selected="selected" @endif value="Отправлен"> Отправлен </option>
+                    </select>
+                </div>
 
-        @endif
 
-    @admin
-    <form method="POST" action="{{ route('order.update', $order) }}">
-        @method('PUT')
-        @csrf
-        <div class="input-group row">
-            <label for="status" class="col-sm-6 col-form-label">Статус </label>
-            <div class="col-sm-6">
-                <select name="status" id="status" class="form-control" >
-                    <option @if($order->status=='Ждет оплаты') selected="selected" @endif value="Ждет оплаты"> Ждет Оплаты  </option>
-                    <option @if($order->status=='Готов к отправке') selected="selected" @endif value="Готов к отправке"> Готов к отправке </option>
-                    <option @if($order->status=='Отправлен') selected="selected" @endif value="Отправлен"> Отправлен </option>
-                </select>
-            </div>
 
+
+                    @if($order->individual_price==null&&$order->image!=null)
+                        <br>
+                        <label for="individual_price" class="col-sm-12 col-form-label">Цена на портрет:</label>
+                        <div class="col-sm-12">
+                            <input type="number" name="individual_price" id="individual_price" class="form-control" value="{{$order->individual_price}}">
+
+                        </div>
+
+                    @endif<br>
+                        <button class="btn btn-success col-4  ml-4">Сохранить</button>
+
+
+            </form>
+            @endadmin
         </div>
-            <br>
-            <div class="input-group row">
-        @if($order->individual_price==null&&$order->image!=null)
-            <br>
-        <label for="individual_price" class="col-sm-6 col-form-label">Цена на портрет:</label>
-        <div class="col-sm-6">
-            <input type="number" name="individual_price" id="individual_price" class="form-control" value="{{$order->individual_price}}">
+    </div>
 
-        </div>
-
-        @endif
-        </div>
-        <button class="btn btn-success">Сохранить</button>
-    </form>
-    @endadmin
 @endsection

@@ -12,7 +12,8 @@ return [
     'logout'=>'Logout',
     'individual_order'=>'Order a portrait',
     'feedback'=>'Feedback',
-    'blog'=>'Blog'
+    'blog'=>'Blog',
+    'langs'=>'Languages',
 
 ];
 

@@ -7,7 +7,9 @@
 @endisset
 
 @section('content')
+
     <div class="col-md-12">
+        <div id="main" >
         @isset($product)
             <h1>Редактировать товар <b>{{ $product->name }}</b></h1>
         @else
@@ -73,7 +75,7 @@
                     <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                     <div class="col-sm-10">
                         <label class="btn btn-default btn-file">
-                        <input id="image" name="image" type="file" accept=".jpg, .jpeg, .png">
+                            <input style=" margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
                         </label>
                     </div>
                 </div>
@@ -88,8 +90,10 @@
                                value="@isset($product){{ $product->price }}@endisset">
                     </div>
                 </div>
+                    <br>
                 <button class="btn btn-success">Сохранить</button>
             </div>
         </form>
+    </div>
     </div>
 @endsection

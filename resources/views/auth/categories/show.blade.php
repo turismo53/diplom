@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="col-md-12">
+        <div id="main">
         <h1>Категория Бытовая техника</h1>
         <table class="table">
             <tbody>
@@ -42,5 +43,6 @@
             </tr>
             </tbody>
         </table>
+    </div>
     </div>
 @endsection

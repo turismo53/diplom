@@ -25,7 +25,7 @@
                     @method('PUT')
                 @endisset
                 @csrf
-        <div class="post">
+
                 @error('title')
                 <div class=" alert alert-danger"> {{$message}} </div>
                 @enderror
@@ -36,7 +36,7 @@
                                value="@isset($post){{ $post->title }}@endisset">
                     </div>
                 </div>
-        </div>
+
                 <br>
                 @error('description')
                 <div class=" alert alert-danger"> {{$message}} </div>
@@ -66,7 +66,6 @@
                 @enderror
                 <div class="input-group row">
                     <label for="text" class="col-sm-3 col-form-label">Текст поста: </label>
-
                         <textarea type="text" class="form-control" name="text" id="text"
                                 rows="5" cols="1"  value="">@isset($post){{ $post->text }}@endisset</textarea>
                 </div>

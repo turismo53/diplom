@@ -3,7 +3,7 @@
 @section('title', 'Заказы')
 
 @section('content')
-    <div class="col-md-12">
+    <div class="col-md-12 orders">
         <h1>Заказы</h1>
         <table class="table">
             <tbody>
@@ -14,13 +14,13 @@
                 <th>
                     Имя
                 </th>
-                <th>
+                <th class="adaptive-admin-menu">
                     Телефон
                 </th>
-                <th>
+                <th class="adaptive-admin-menu">
                     Когда отправлен
                 </th>
-                <th>
+                <th class="adaptive-admin-menu">
                     Сумма
                 </th>
                 <th>
@@ -31,16 +31,16 @@
                 <tr>
                     <td>{{ $order->id}}</td>
                     <td>{{ $order->name }}</td>
-                    <td>{{ $order->phone }}</td>
-                    <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
+                    <td class="adaptive-admin-menu">{{ $order->phone }}</td>
+                    <td class="adaptive-admin-menu">{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     @if($order->getFullPrice()!=0)
-                    <td>{{ $order->getFullPrice() }} руб.</td>
+                    <td class="adaptive-admin-menu"> {{ $order->getFullPrice() }} руб.</td>
                     @else
 
                         @if($order->individual_price==null)
-                            <td>0 руб.</td>
+                            <td class="adaptive-admin-menu">0 руб.</td>
                         @else
-                        <td>{{ $order->individual_price }} руб.</td>
+                        <td class="adaptive-admin-menu">{{ $order->individual_price }} руб.</td>
                         @endif
                         @endif
                     <td>{{ $order->status }} </td>

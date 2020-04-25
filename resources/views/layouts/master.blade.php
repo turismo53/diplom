@@ -10,15 +10,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('main.online_shop'): @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script
         src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/starter-template.css" rel="stylesheet">
     <link href="/css/menus.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <script src="/js/app.js"></script>
 
 </head>
@@ -26,7 +30,7 @@
 
 
 
-<div id="main">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand main-brand" href="{{route('index')}}">@lang('main.online_shop')</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,8 +45,20 @@
             <li  @routeactive('extra*')><a class="hover-effect" href="{{route('extra.order')}}">@lang('main.individual_order')</a></li>
             <li  @routeactive('feedback*')><a class="hover-effect" href="{{route('feedback.index')}}">@lang('main.feedback')</a></li>
             <li  @routeactive('posts*')><a class="hover-effect" href="{{route('posts.index')}}">@lang('main.blog')</a></li>
-            <li><a href="{{route('locale','en')}}">en</a></li>
-            <li><a href="{{route('locale','ru')}}">ru</a></li>
+            <li>
+
+                <div class="dropdown" >
+                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke;" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @lang('main.langs')
+                    </button>
+                    <div class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">
+                        <a class="langs" href="{{route('locale','en')}}">en</a>
+                        <br>
+                        <a class="langs" href="{{route('locale','ru')}}">ru</a>
+                    </div>
+                </div>
+            </li>
+
         </ul>
         @guest
             <ul class="nav navbar-nav navbar-right">
@@ -72,8 +88,8 @@
 <div class="starter-template">
     <div class="container">
 
-     
 
+<div id="main">
 
         @if(session()->has('success'))
             <p class="alert alert-success">{{ session()->get('success') }}</p>
@@ -84,10 +100,16 @@
         @yield('content')
             <button id="back-to-top" onclick=""><i class="fa fa-sort-up fa-3x"></i></button>
         </div>
-    </div>
+
+</div>
 </div>
 <script src="/js/scroll.js"></script>
 <script src="/js/loadFile.js"></script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="/js/slider.js"></script>
 </body>
 
 </html>

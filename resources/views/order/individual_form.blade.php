@@ -104,9 +104,9 @@
                         <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">Картинка: </label>
                             <div class="col-md-6">
-                                <label class="btn btn-default btn-file">
-                                    <label  id="textFile"style="cursor: pointer" for="myFileUpload">Выберите файл</label>
-                                    <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="file">
+                                <label class="btn btn-default btn-file" >
+                                    <label  id="textFile"style="cursor: pointer" for="myFileUpload" >Выберите файл</label>
+                                    <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
 
                                 </label>
                             </div>

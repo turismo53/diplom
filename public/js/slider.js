@@ -81,34 +81,61 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/loadFile.js":
-/*!**********************************!*\
-  !*** ./resources/js/loadFile.js ***!
-  \**********************************/
+/***/ "./resources/js/slider.js":
+/*!********************************!*\
+  !*** ./resources/js/slider.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("asdasdas");
-$('#myFileUpload').on("change", function () {
-  var imgFile = document.getElementById('myFileUpload').files[0];
-  $("#textFile").text(imgFile.name);
+$(document).ready(function () {
+  $('.slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    dots: true,
+    nextArrow: '<i class=" next fa fa-arrow-right fa-2x" style="color:white!important; "></i>',
+    prevArrow: '<i class=" prev fa fa-arrow-left fa-2x" style="color:white!important; "></i>',
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 510,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }]
+  });
 });
 
 /***/ }),
 
-/***/ 3:
-/*!****************************************!*\
-  !*** multi ./resources/js/loadFile.js ***!
-  \****************************************/
+/***/ 4:
+/*!**************************************!*\
+  !*** multi ./resources/js/slider.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\George\Desktop\diploma\resources\js\loadFile.js */"./resources/js/loadFile.js");
+module.exports = __webpack_require__(/*! C:\Users\George\Desktop\diploma\resources\js\slider.js */"./resources/js/slider.js");
 
 
 /***/ })

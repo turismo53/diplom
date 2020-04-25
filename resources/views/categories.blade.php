@@ -3,18 +3,17 @@
 @section('title','Все категории' )
 
 @section('content')
+
     <div class="starter-template">
 
     @foreach($categories as $category)
 
     <div class="panel">
             <a href="{{route('category', $category->code) }}">
-                <img src="{{ Storage::url($category->image) }}">
-                <h2>{{$category->name}}</h2>
+                <img class="category-image" src="{{ Storage::url($category->image) }}">{{$category->name}}
+
             </a>
-            <p>
-                В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным ценам!
-            </p>
+
         </div>
     @endforeach
 

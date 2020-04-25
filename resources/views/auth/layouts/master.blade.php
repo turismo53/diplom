@@ -9,10 +9,19 @@
 
     <!-- Scripts -->
     <script src="/js/app.js" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+        crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/starter-template.css" rel="stylesheet">
+    <link href="/css/menus.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -93,5 +102,12 @@
         </div>
     </div>
 </div>
+<script src="/js/scroll.js"></script>
+<script src="/js/loadFile.js"></script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="/js/slider.js"></script>
 </body>
 </html>

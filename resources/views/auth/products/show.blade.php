@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="col-md-12">
+        <div id="main">
         <h1>{{ $product->name }}</h1>
         <table class="table">
             <tbody>
@@ -30,7 +31,7 @@
 
             <tr>
                 <td>Картинка</td>
-                <td><img src="{{ Storage::url($product->image) }}"></td>
+                <td ><img class="prod-img" src="{{ Storage::url($product->image) }}"></td>
             </tr>
             <tr>
                 <td>Категория</td>
@@ -38,5 +39,6 @@
             </tr>
             </tbody>
         </table>
+    </div>
     </div>
 @endsection

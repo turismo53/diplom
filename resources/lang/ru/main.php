@@ -12,6 +12,7 @@ return [
     'logout'=>'Выйти',
     'individual_order'=>'Заказать портерт',
     'feedback'=>'Отзывы',
-    'blog'=>'Блог'
+    'blog'=>'Блог',
+    'langs'=>'Языки',
 ];
 
