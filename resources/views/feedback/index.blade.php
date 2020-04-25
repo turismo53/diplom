@@ -15,7 +15,7 @@
             <label for="text">Текст отзыва: </label>
             <div class="">
                 <textarea type="text" class="form-control w-100" name="text" id="text"
-                       value="" rows="10" placeholder="Введите текст отзыва"></textarea>
+                       value="" rows="10" maxlength="149" placeholder="max 149symbols"></textarea>
             </div>
 
         <br>
