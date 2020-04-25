@@ -15,7 +15,7 @@
             <label for="text">Текст отзыва: </label>
             <div class="">
                 <textarea type="text" class="form-control w-100" name="text" id="text"
-                       value="" rows="10" maxlength="149" placeholder="max 149symbols"></textarea>
+                       value="" rows="10"  placeholder="Введите текст отзыва"></textarea>
             </div>
 
         <br>
@@ -30,11 +30,18 @@
 
 @foreach($feedbacks as $feedback)
 
-    <div class="thumbnail">
-    <br>
-    <p>{{$feedback->user->name}}:{{$feedback->text}}</p>
+    <div class="thumbnail row">
+
+    {{$feedback->user->name}}:
     <br>
     </div>
+    <div class="thumbnail row">
+
+     <div class="col-6" style=" word-wrap: break-word;">  {{$feedback->text}}</div>
+        <br>
+    </div>
+
+
     @endforeach
 
 @endsection
