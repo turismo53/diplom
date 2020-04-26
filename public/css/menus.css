@@ -296,7 +296,7 @@ html {
   }
 
   .post-image {
-    max-width: 80px;
+    max-width: 65px;
   }
 
   .categories-admin {
@@ -314,13 +314,13 @@ html {
 
 @media (max-width: 810px) {
   .adaptive-product-image {
-    max-width: 250px;
+    max-width: 200px;
   }
 }
 
 @media (max-width: 768px) {
   .post-image {
-    max-width: 250px;
+    max-width: 200px;
   }
 
   .post-title {
