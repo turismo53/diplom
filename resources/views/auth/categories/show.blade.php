@@ -17,7 +17,7 @@
                 </th>
             </tr>
             <tr>
-                <td>ID</td>
+                <td >ID</td>
                 <td>{{ $category->id }}</td>
             </tr>
             <tr>
@@ -28,14 +28,11 @@
                 <td>Название</td>
                 <td>{{ $category->name }}</td>
             </tr>
-            <tr>
-                <td>Описание</td>
-                <td>{{ $category->description }}</td>
-            </tr>
+
             <tr>
                 <td>Картинка</td>
                 <td><img src="{{ Storage::url($category->image) }}"
-                         height="240px"></td>
+                         height="180px"></td>
             </tr>
             <tr>
                 <td>Кол-во товаров</td>

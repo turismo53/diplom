@@ -3,13 +3,13 @@
 @section('title', 'Категории')
 
 @section('content')
-    <div id="main">
+    <div id="main" class="categories-admin">
     <div class="col-md-12">
         <h1>Категории</h1>
         <table class="table">
             <tbody>
             <tr>
-                <th >
+                <th  class="adaptive-admin-menu">
                     #
                 </th>
                 <th>
@@ -24,7 +24,7 @@
             </tr>
             @foreach($categories as $category)
                 <tr>
-                    <td >{{ $category->id }}</td>
+                    <td class="adaptive-admin-menu" >{{ $category->id }}</td>
                     <td>{{ $category->code }}</td>
                     <td>{{ $category->name }}</td>
                     <td>

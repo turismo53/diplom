@@ -3,7 +3,9 @@
 @section('title', 'Заказы')
 
 @section('content')
-    <div class="col-md-12 orders">
+
+    <div id="main">
+    <div class="col-md-12 ">
         <h1>Заказы</h1>
         <table class="table">
             <tbody>
@@ -11,7 +13,7 @@
                 <th>
                     #
                 </th>
-                <th>
+                <th class="adaptive-admin-menu">
                     Имя
                 </th>
                 <th class="adaptive-admin-menu">
@@ -62,5 +64,6 @@
             </tbody>
         </table>
 {{$orders->links()}}
+    </div>
     </div>
 @endsection

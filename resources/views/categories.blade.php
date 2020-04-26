@@ -10,8 +10,11 @@
 
     <div class="panel">
             <a href="{{route('category', $category->code) }}">
-                <img class="category-image" src="{{ Storage::url($category->image) }}">{{$category->name}}
 
+              <h3>  <img class="category-image" src="{{ Storage::url($category->image) }}">
+                  <br>
+                  {{$category->name}}
+              </h3>
             </a>
 
         </div>

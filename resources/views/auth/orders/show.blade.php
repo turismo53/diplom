@@ -5,9 +5,9 @@
 @section('content')
     <div class="py-4">
         <div class="container ">
-            <div class="justify-content-center order">
+            <div class="justify-content-center">
 
-
+<div id="main" class="order">
 
                 <div class="panel">
                     <h1>Заказ №{{ $order->id }}</h1>
@@ -99,5 +99,5 @@
             @endadmin
         </div>
     </div>
-
+    </div>
 @endsection

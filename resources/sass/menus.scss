@@ -11,7 +11,9 @@
     }
     .active{
         background-color: red;
-
+        border-radius: 7px;
+        border: 0.5px solid;
+        opacity: 0.9;
     }
 }
 
@@ -21,7 +23,7 @@
 }
 .post{
     clear: both;
-    border: 1px solid;
+
 }
 .admin{
     color: black!important;
@@ -41,8 +43,15 @@
     color: white;
 }
 
+.card{
+    border:0;
+}
+
 body{
-    background-image: url("http://fullhdwallpapers.ru/image/nature/13429/strashnyy-les.jpg");
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(25,3,91,1) 100%);
+
+   // background-image: url("https://sun9-39.userapi.com/c857036/v857036425/111303/N3ntwWyCWqM.jpg");
     background-attachment: fixed;
     color:ghostwhite;
 }
@@ -78,7 +87,7 @@ body{
     left: 0;
     width: 20px;
     height: 20px;
-    content: '•'; /* <-- Вот этот символ */
+    content: '•';
     text-align: center;
     opacity: 1;
     color: red!important;
@@ -132,8 +141,8 @@ html{
 .col-form-label{
     font-weight: 900!important;
     font-size:18px;
-    -webkit-text-stroke: 0.1px lawngreen;
-    -webkit-text-stroke-color: lawngreen;
+    -webkit-text-stroke: 0.5px lawngreen;
+    -webkit-text-stroke-color: black;
 
 }
 
@@ -142,19 +151,27 @@ html{
     border-radius: 25px;
     border: 2px solid limegreen;
     background-color:ghostwhite;
-    transition: width .8s;
+    transition:  .8s;
+
 }
 
 
 #email:focus, #password:focus,#name:focus,#phone:focus,#city:focus,#street:focus,#mail_index:focus,#password-confirm:focus,#code:focus,#price:focus{
     border-color: blue;
     width: 120%;
+    -webkit-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+    -moz-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+    box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
 }
 
 
-#main{
+#main,#main-extra{
    // -webkit-text-stroke-width: 1px;
 //    -webkit-text-stroke-color: pink;
+    -webkit-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+    -moz-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+    box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+    border-radius: 25px;
     margin-top: 13%;
     color: #1b1e21;
     background-color: white;
@@ -165,6 +182,7 @@ html{
 .hover-effect:hover:after,
 .hover-effect:focus:after{
     width: 100%;
+
 }
 .thumbnail img {
     max-height: 200px!important;
@@ -200,13 +218,11 @@ padding:15px 10px;
     h1{
         color: black;
     }
+
+
 }
 
-.order{
-    color:black;
-    background-color: white;
-    padding: 20px 100px;
-}
+
 
 
 @media (max-width: 990px) {
@@ -231,7 +247,7 @@ padding:15px 10px;
     }
 
     .container{
-        padding-left: 7px!important;
+        //padding-left: 7px!important;
     }
 
 
@@ -244,15 +260,74 @@ padding:15px 10px;
     }
 }
 
-@media (max-width: 400px) {
-
-    .table td, .table th {
-        padding: 0.4em;
+@media (max-width: 470px) {
+    .order{
+        padding: 12px!important;
+    }
+    #myFileUpload{
+        width: 100%;
     }
 
+ #main-extra{
+     -webkit-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+     -moz-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+     box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
+     border-radius: 25px;
+     margin-top: 13%;
+     color: #1b1e21;
+     background-color: white;
+     position: relative;
+     padding: 0px;
+     h1{
+         text-align: center;
+     }
+ }
+    .table td, .table th {
+        padding: 0.4em;
+        text-wrap: normal;
+    }
+
+    .ind-order{
+        padding: 0px !important;
+    }
+
+    .row-adapt{
+        margin: 0px!important;
+    }
+
+    .post-image{
+        max-width: 80px;
+    }
+.categories-admin{
+    padding: 0!important;
+}
+
+    .post-title{
+        font-size: 17px;
+    }
+    .post-text{
+        font-size: 12px;
+    }
 }
 @media (max-width: 810px) {
     .adaptive-product-image {
         max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+
+    .post-image{
+        max-width: 250px;
+    }
+
+
+    .post-title{
+        font-size: 19px;
+    }
+    .post-text{
+        font-size: 14px;
     }
 }

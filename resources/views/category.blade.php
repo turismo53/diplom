@@ -9,7 +9,7 @@
 
 
  <h2>{{$category->name}}</h2>
-        <div id="main">
+
     <div class="slider">
     @foreach($category -> products as $product)
 
@@ -17,6 +17,6 @@
 
 @endforeach
             </div>
-    </div>
+
 
 @endsection

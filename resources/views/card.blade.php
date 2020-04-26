@@ -2,7 +2,7 @@
     <div class="thumbnail">
 
         <a href="{{route('product',[$product->category->code, $product->code] )}}"
-           role="button"><img src="{{ Storage::url($product->image) }}" alt="iPhone X 64GB"></a>
+           role="button"><img src="{{ Storage::url($product->image) }}" alt="product"></a>
         <div class="caption">
             <h3>{{$product->name}}</h3>
             <p>{{$product->price}}р.</p>

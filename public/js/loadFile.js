@@ -93,7 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("asdasdas");
 $('#myFileUpload').on("change", function () {
   var imgFile = document.getElementById('myFileUpload').files[0];
   $("#textFile").text(imgFile.name);
