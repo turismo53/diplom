@@ -35,7 +35,7 @@
                     <label for="code" class="col-sm-2 col-form-label">Код: </label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="code" id="code"
-                               value="@isset($product){{ $product->code }}@endisset">
+                               value="{{old('code',isset($product)? $product->code :null)}}">
                     </div>
                 </div>
                 <br>
@@ -46,7 +46,7 @@
                     <label for="name" class="col-sm-2 col-form-label">Название: </label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="name" id="name"
-                               value="@isset($product){{ $product->name }}@endisset">
+                               value="{{old('name',isset($product)? $product->name :null)}}">
                     </div>
                 </div>
                 <br>
@@ -77,7 +77,13 @@
                         <label class="btn btn-default btn-file" >
                             <label  id="textFile"style="cursor: pointer" for="myFileUpload" >Выберите файл</label>
                             <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
-
+                            <script >
+                                function changeName() {
+                                    console.log("sex");
+                                    const imgFile = document.getElementById('myFileUpload').files[0];
+                                    $("#textFile").text(imgFile.name);
+                                };
+                            </script>
                         </label>
                     </div>
                 </div>
@@ -89,11 +95,20 @@
                     <label for="price" class="col-sm-2 col-form-label">Цена: </label>
                     <div class="col-sm-2">
                         <input type="text" class="form-control" name="price" id="price"
-                               value="@isset($product){{ $product->price }}@endisset">
+                               value="{{old('name',isset($product)? $product->price :null)}}">
                     </div>
                 </div>
                     <br>
-                <button class="btn btn-success">Сохранить</button>
+                    <button type="submit" class="btn btn-primary submit"  onclick="hide()">
+                        Сохранить
+                    </button>
+                    <label for="submit" class="submit-label" style="display: none; color: black;"> Обработка...</label>
+                    <script>
+                        function hide() {
+                            $(".submit").css("display","none");
+                            $(".submit-label").css("display","block");
+                        }
+                    </script>
             </div>
         </form>
     </div>

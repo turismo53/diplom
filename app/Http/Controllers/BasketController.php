@@ -44,7 +44,7 @@ class BasketController extends Controller
             return redirect()->route('index');
         }
         $order=Order::find($orderId);
-       $success=$order->saveOrder($request);
+       $success=$order->saveOrder($request['name'],$request['phone'],$request['city'],$request['image']);
        if( $success){
         session()->flash('success','Ваш заказ успешно добавлен в очередь');
        }else{

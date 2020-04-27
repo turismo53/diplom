@@ -29,15 +29,14 @@ class Order extends Model
             return $total;
         }
 
-        public function saveOrder($image){
+        public function saveOrder($name,$phone,$adres,$image){
             if($this->status==0){
-            $this->name = Auth::User()->name;
-            $this->phone = Auth::User()->phone;
-            $this->adres = Auth::User()->street;
+            $this->name = $name;
+            $this->phone = $phone;
+            $this->adres = $adres;
             $this->done = 1;
             $this->user_id=Auth::id();
             if(!isset($image['name']))
-
             $this->image=$image;
             $this->save();
             session()->forget('orderId');

@@ -87,7 +87,7 @@ return [
     'min' => [
         'numeric' => 'Данное поле не может содержать меньше :min символов.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => 'Данное поле не может содержать меньше :min символов.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',

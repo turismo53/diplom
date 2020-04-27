@@ -70,8 +70,17 @@
 
                 <br>
                     @csrf
-                         <input type="submit" class="btn btn-success" value="@lang('basket.checkout')">
 
+                <button type="submit" class="btn btn-primary submit"  onclick="hide()">
+                    @lang('basket.checkout')
+                </button>
+                <label for="submit" class="submit-label" style="display: none; color: black;"> Обработка...</label>
+                <script>
+                    function hide() {
+                        $(".submit").css("display","none");
+                        $(".submit-label").css("display","block");
+                    }
+                </script>
             </form>
 @endauth
 

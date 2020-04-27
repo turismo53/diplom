@@ -93,10 +93,13 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$('#myFileUpload').on("change", function () {
+function changeName() {
+  console.log("sex");
   var imgFile = document.getElementById('myFileUpload').files[0];
   $("#textFile").text(imgFile.name);
-});
+}
+
+;
 
 /***/ }),
 

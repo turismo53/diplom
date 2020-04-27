@@ -30,7 +30,7 @@ class RegisterController extends Controller
         if($user->is_admin)
         return route('home');
         else{
-                  session()->flash('success', 'Вы успешно зарегестрированны!');
+                  session()->flash('success', 'Вы успешно зарегистрированы!');
                 return route('index');
             }
     }

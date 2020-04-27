@@ -21,8 +21,17 @@
         <br>
         @csrf
 
-        <button class="btn btn-success">Сохранить</button>
 
+        <button type="submit" class="btn btn-primary" id="submit" onclick="hide()">
+            Сохранить
+        </button>
+        <label for="submit" id="submit-label" style="display: none; color: black;"> Обработка...</label>
+        <script>
+            function hide() {
+                $("#submit").css("display","none");
+                $("#submit-label").css("display","block");
+            }
+        </script>
     </form>
 
 <br>
@@ -35,7 +44,7 @@
 
     <div class="thumbnail row">
 
-     <div class="col-6" style=" word-wrap: break-word;">    <b> {{$feedback->user->name}}:</b> {{$feedback->text}}
+     <div class="col-12 col-md-9" style=" word-wrap: break-word;">    <b> {{$feedback->user->name}}:</b> {{$feedback->text}}
      <br>
          <i class="float-left pl-4 pt-2" style="font-size: 12px">
              Дата публикации:

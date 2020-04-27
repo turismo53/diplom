@@ -28,6 +28,8 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/menus.css" rel="stylesheet">
+
+    <script  src="/js/loadFile.js"></script>
 </head>
 <body>
 <div id="app">
@@ -195,15 +197,28 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">Картинка: </label>
                             <div class="col-md-6">
                                 <label class="btn btn-default btn-file" >
-                                    <label  id="textFile"style="cursor: pointer" for="myFileUpload" >Выберите файл</label>
-                                    <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
-
+                                    <label  id="textFile"style="cursor: pointer" for="myFileUpload"  >Выберите файл</label>
+                                    <input style="display: none; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image" onchange='changeName();'>
+                                    <script >
+                                        function changeName() {
+                                            console.log("sex");
+                                            const imgFile = document.getElementById('myFileUpload').files[0];
+                                            $("#textFile").text(imgFile.name);
+                                        };
+                                    </script>
                                 </label>
                             </div>
                         </div>
                         @csrf
-                        <input type="submit" class="btn btn-success" value="@lang('basket.checkout')">
-                        </div>
+                        <input type="submit" class="btn btn-success" id="submit" value="@lang('basket.checkout')" onclick="hide();">
+                        <label for="submit" id="submit-label" style="display: none;"> Обработка...</label>
+                        <script>
+                            function hide() {
+                                $("#submit").css("display","none");
+                                $("#submit-label").css("display","block");
+                            }
+                        </script>
+
             </form>
         </div>
         </div>
@@ -212,13 +227,10 @@
     </div>
 </div>
 </div>
-<script src="/js/scroll.js"></script>
-<script src="/js/loadFile.js"></script>
+<script  src="/js/scroll.js"></script>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="/js/slider.js"></script>
+
+
 </body>
 </html>
 

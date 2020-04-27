@@ -193,6 +193,11 @@ html{
     flex-direction: column;
 }
 
+#textFile{
+    cursor: pointer;
+    border:1px solid #ced4da;
+    padding:5px!important
+}
 
 .slider{
     display: flex;
@@ -201,7 +206,7 @@ html{
 
 .langs{
     width: 100%;
-padding:15px 10px;
+    padding:15px 10px;
     text-transform: uppercase;
 }
 
@@ -262,6 +267,9 @@ padding:15px 10px;
         width: 100%;
     }
 
+
+
+
  #main-extra{
      -webkit-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
      -moz-box-shadow: 10px 13px 23px -1px rgba(0,0,0,0.86);
@@ -320,5 +328,19 @@ padding:15px 10px;
     }
     .post-text{
         font-size: 14px;
+    }
+}
+
+
+@media (max-width: 1188px){
+    .navbar-nav{
+        li{
+            padding: 15px 10px;
+            margin-left: 0px;
+a{
+    font-size: 14px;
+}
+        }
+
     }
 }

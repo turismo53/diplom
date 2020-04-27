@@ -7,7 +7,7 @@ return [
     'categories'=>'Категории',
     'basket'=>'Корзина',
     'sign_in'=>'Войти',
-    'sign_up'=>'Зарегестрироваться',
+    'sign_up'=>'Регистрация',
     'admin'=>'Админка',
     'logout'=>'Выйти',
     'individual_order'=>'Заказать портрет',

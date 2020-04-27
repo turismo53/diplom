@@ -17,10 +17,10 @@
                         <div class=" alert alert-danger"> {{$message}}</div>
                      @enderror
                     <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail</label>
+                        <label for="email" class="col-md-3 col-lg-4 col-form-label text-md-right">E-Mail</label>
              <div class="col-md-6">
                             <input id="email" type="email" class="form-control"
-                                   name="email" value="" >
+                                   name="email" value="{{old('email')}}" >
 
                         </div>
                     </div>
@@ -28,19 +28,24 @@
                     <div class=" alert alert-danger"> {{$message}}</div>
                     @enderror
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
+                        <label for="password" class="col-md-3 col-lg-4 col-form-label text-md-right">Пароль</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control"
-                                   name="password" >
-
+                            <input id="password" type="password" class="form-control" name="password" >
                         </div>
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="col-md-9 offset-5 offset-md-6 offset-lg-6">
-                            <button type="submit" class="btn btn-primary">
+                        <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6  col-md-5 offset-md-5  col-sm-5 offset-sm-5   col-5 offset-5">
+                            <button type="submit" class="btn btn-primary" id="submit" onclick="hide()">
                                 Войти
                             </button>
+                            <label for="submit" id="submit-label" style="display: none; color: black;"> Обработка...</label>
+                            <script>
+                                function hide() {
+                                    $("#submit").css("display","none");
+                                    $("#submit-label").css("display","block");
+                                }
+                            </script>
                         </div>
                     </div>
                 </form>

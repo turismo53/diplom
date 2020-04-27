@@ -47,7 +47,9 @@
                     <li><a class="admin"href="{{ route('products.index') }}">Товары</a>  </li>
                     <li><a  class="admin"href="{{ route('home') }}">Заказы</a></li>
                     @else
+                        @auth
                         <li><a class="admin"href="{{route('order.index.person')}}">Мои заказы</a></li>
+                        @endauth
                     @endadmin
                 </ul>
 
@@ -85,7 +87,12 @@
 
 
                 @endauth
-
+                @guest
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li><a style="color: #1b1e21!important;" class="hover-effect" href="{{route('login')}}">@lang('main.sign_in')</a></li>
+                        <li><a style="color: #1b1e21!important;" class="hover-effect" href="{{route('register')}}">@lang('main.sign_up')</a></li>
+                    </ul>
+                @endguest
             </div>
 
 </nav>

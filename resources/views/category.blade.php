@@ -3,7 +3,7 @@
 @section('title','Категория ' .$category->name )
 
 @section('content')
-    <div class="starter-template">
+
 
 
 
@@ -13,10 +13,10 @@
     <div class="slider">
     @foreach($category -> products as $product)
 
-@include('card', compact('product'))
+        @include('card', compact('product'))
 
-@endforeach
-            </div>
+        @endforeach
+    </div>
 
 
 @endsection

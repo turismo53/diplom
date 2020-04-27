@@ -55,8 +55,16 @@
                 <div class="input-group row">
                     <label for="image" class="col-sm-3 col-form-label">Картинка: </label>
                     <div class="col-sm-0">
-                        <label class="btn btn-default btn-file">
-                            <input id="image" name="image" type="file" accept=".jpg, .jpeg, .png">
+                        <label class="btn btn-default btn-file text-center">
+                            <label id="textFile" for="myFileUpload" >Открыть</label>
+                            <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
+                            <script >
+                                function changeName() {
+                                    console.log("sex");
+                                    const imgFile = document.getElementById('myFileUpload').files[0];
+                                    $("#textFile").text(imgFile.name);
+                                };
+                            </script>
                         </label>
                     </div>
                 </div>

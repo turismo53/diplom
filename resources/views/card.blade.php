@@ -8,7 +8,16 @@
             <p>{{$product->price}}р.</p>
             <p>
             <form action="{{ route('basket-add',$product->id) }}" method="POST">
-                <button type="submit" class="btn btn-primary" role="button">В корзину</button>
+                <button type="submit" class="btn btn-primary submit"  onclick="hide()">
+                    В корзину
+                </button>
+                <label for="submit" class="submit-label" style="display: none; color: black;"> Обработка...</label>
+                <script>
+                    function hide() {
+                        $(".submit").css("display","none");
+                        $(".submit-label").css("display","block");
+                    }
+                </script>
 
             @csrf
              </form>

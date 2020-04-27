@@ -49,7 +49,7 @@
             <li>
 
                 <div class="dropdown" >
-                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke;" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke; padding: 0px" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @lang('main.langs')
                     </button>
                     <div class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">

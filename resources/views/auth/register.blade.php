@@ -8,16 +8,24 @@
 
             <form method="POST" action="{{ route('register') }}" aria-label="Register">
                 @csrf
-                @error('name')
-        <div class=" alert alert-danger"> {{$message}} </div>
-        @enderror
+
                 <div class="form-group row">
                     <div class="card-header col-12 text-center">Регистрация</div>
-                    <label for="name" class="col-md-4 col-form-label text-md-right">Имя</label>
+                </div>
+
+                @error('name')
+                <div class=" alert alert-danger"> {{$message}} </div>
+                @enderror
+
+                <div class="form-group row">
+
+
+
+                    <label for="name" class="col-md-3 col-lg-3 col-form-label text-md-right">Имя</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name"
-                               value="">
+                               value="{{old('name')}}">
 
                     </div>
                 </div>
@@ -26,11 +34,11 @@
         <div class=" alert alert-danger"> {{$message}} </div>
         @enderror
                 <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                    <label for="email" class="col-md-3 col-lg-3 col-form-label text-md-right">E-Mail</label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control"
-                               name="email" value="" >
+                               name="email" value="{{old('email')}}" >
 
                     </div>
                 </div>
@@ -39,11 +47,11 @@
                 <div class=" alert alert-danger"> {{$message}} </div>
                 @enderror
                 <div class="form-group row">
-                    <label for="phone" class="col-md-4 col-form-label text-md-right">Телефон</label>
+                    <label for="phone" class="col-md-3 col-lg-3 col-form-label text-md-right">Телефон</label>
 
                     <div class="col-md-6">
                         <input id="phone" type="phone" class="form-control"
-                               name="phone" value="" >
+                               name="phone" value="{{old('phone')}}" >
 
                     </div>
                 </div>
@@ -53,11 +61,11 @@
                 <div class=" alert alert-danger"> {{$message}} </div>
                 @enderror
                 <div class="form-group row">
-                    <label for="city" class="col-md-4 col-form-label text-md-right">Город</label>
+                    <label for="city" class="col-md-3 col-lg-3 col-form-label text-md-right">Город</label>
 
                     <div class="col-md-6">
-                        <input id="city" type="phone" class="form-control"
-                               name="city" value="" >
+                        <input id="city" type="city" class="form-control"
+                               name="city" value="{{old('city')}}" >
 
                     </div>
                 </div>
@@ -66,11 +74,11 @@
                 <div class=" alert alert-danger"> {{$message}} </div>
                 @enderror
                 <div class="form-group row">
-                    <label for="street" class="col-md-4 col-form-label text-md-right">Улица</label>
+                    <label for="street" class="col-md-3 col-lg-3 col-form-label text-md-right">Улица</label>
 
                     <div class="col-md-6">
                         <input id="street" type="street" class="form-control"
-                               name="street" value="" >
+                               name="street" value="{{old('street')}}" >
 
                     </div>
                 </div>
@@ -79,11 +87,11 @@
                 <div class=" alert alert-danger"> {{$message}} </div>
                 @enderror
                 <div class="form-group row">
-                    <label for="mail_index" class="col-md-4 col-form-label text-md-right">Почтовый индекс</label>
+                    <label for="mail_index" class="col-md-3 col-lg-3 col-form-label text-md-right">Почтовый индекс</label>
 
                     <div class="col-md-6">
                         <input id="mail_index" type="mail_index" class="form-control"
-                               name="mail_index" value="" >
+                               name="mail_index" value="{{old('mail_index')}}" >
 
                     </div>
                 </div>
@@ -92,17 +100,19 @@
         <div class=" alert alert-danger"> {{$message}} </div>
         @enderror
                 <div class="form-group row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
+                    <label for="password" class="col-md-3 col-lg-3 col-form-label text-md-right">Пароль</label>
 
                     <div class="col-md-6">
                         <input id="password" type="password" class="form-control"
-                               name="password" >
+                               name="password" value="">
 
                     </div>
                 </div>
 
+
+
                 <div class="form-group row">
-                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Подтвердите
+                    <label for="password-confirm" class="col-md-3 col-lg-3 col-form-label text-md-right">Подтвердите
                         пароль</label>
 
                     <div class="col-md-6">
@@ -112,10 +122,17 @@
                 </div>
 
                 <div class="form-group row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary" id="submit" onclick="hide()">
                             Зарегистрироваться
                         </button>
+                        <label for="submit" id="submit-label" style="display: none; color: black;"> Обработка...</label>
+                        <script>
+                            function hide() {
+                                $("#submit").css("display","none");
+                                $("#submit-label").css("display","block");
+                            }
+                        </script>
                     </div>
                 </div>
             </form>

@@ -15,6 +15,7 @@ class OrderController extends Controller
     public function index(){
         $user = Auth::user();
         $orders = Order::where('done',1)->where('user_id',$user->id)->paginate(5);
+
         return view('auth.orders.index',compact('orders'));
 
     }
@@ -34,7 +35,8 @@ class OrderController extends Controller
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('orders');
         }
-        $order->saveOrder($params['image']);
+        $order->saveOrder($params['name'],$params['phone'],$params['city'],$params['image']);
+        session()->flash('success','Ваш заказ успешно добавлен в очередь');
         return redirect()->route('index');
     }
 

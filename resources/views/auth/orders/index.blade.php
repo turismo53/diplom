@@ -6,7 +6,10 @@
 
     <div id="main">
     <div class="col-md-12 ">
-        <h1>Заказы</h1>
+        <h1 class="text-center">Заказы</h1>
+        @if($orders->total()==0)
+            <h2 class="text-center">Пока ничего нет</h2>
+            @else
         <table class="table">
             <tbody>
             <tr>
@@ -27,6 +30,9 @@
                 </th>
                 <th>
                     Статус
+                </th>
+                <th>
+
                 </th>
             </tr>
             @foreach($orders as $order)
@@ -63,6 +69,7 @@
             @endforeach
             </tbody>
         </table>
+        @endif
 {{$orders->links()}}
     </div>
     </div>
