@@ -28,8 +28,6 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/menus.css" rel="stylesheet">
-
-    <script  src="/js/loadFile.js"></script>
 </head>
 <body>
 <div id="app">

@@ -16,5 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/menus.scss', 'public/css')
     .js('resources/js/scroll.js', 'public/js')
     .js('resources/js/onload.js', 'public/js')
-    .js('resources/js/loadFile.js', 'public/js')
     .js('resources/js/slider.js', 'public/js');
