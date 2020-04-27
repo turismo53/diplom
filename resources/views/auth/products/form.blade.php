@@ -94,21 +94,15 @@
                 <div class="input-group row">
                     <label for="price" class="col-sm-2 col-form-label">Цена: </label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control" name="price" id="price"
-                               value="{{old('name',isset($product)? $product->price :null)}}">
+                        <input type="number" class="form-control" name="price" id="price"
+                               value="{{old('price',isset($product)? $product->price :null)}} " min="1">
                     </div>
                 </div>
                     <br>
                     <button type="submit" class="btn btn-primary submit"  onclick="hide()">
                         Сохранить
                     </button>
-                    <label for="submit" class="submit-label" style="display: none; color: black;"> Обработка...</label>
-                    <script>
-                        function hide() {
-                            $(".submit").css("display","none");
-                            $(".submit-label").css("display","block");
-                        }
-                    </script>
+
             </div>
         </form>
     </div>
