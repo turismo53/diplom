@@ -60,7 +60,6 @@
                             <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
                             <script >
                                 function changeName() {
-                                    console.log("sex");
                                     const imgFile = document.getElementById('myFileUpload').files[0];
                                     $("#textFile").text(imgFile.name);
                                 };
