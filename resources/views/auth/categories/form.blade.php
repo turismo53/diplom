@@ -56,11 +56,10 @@
                     <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                     <div class="col-sm-10">
                         <label class="btn btn-default btn-file" >
-                            <label  id="textFile"style="cursor: pointer" for="myFileUpload" >Открыть</label>
-                            <input style="visibility: hidden; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image">
+                            <label  id="textFile"style="cursor: pointer" for="myFileUpload"  >Выберите файл</label>
+                            <input style="display: none; margin:0; padding: 0" id="myFileUpload" type="file" accept=".jpg, .jpeg, .png" name="image" onchange='changeName();'>
                             <script >
                                 function changeName() {
-                                    console.log("sex");
                                     const imgFile = document.getElementById('myFileUpload').files[0];
                                     $("#textFile").text(imgFile.name);
                                 };
@@ -73,7 +72,7 @@
                     <button type="submit" class="btn btn-primary submit"  onclick="hide()">
                     Сохранить
                     </button>
-                
+
             </div>
         </form>
     </div>

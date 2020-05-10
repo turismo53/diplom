@@ -129,7 +129,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control"
+                                <input id="email" type="text" class="form-control"
                                        name="email" value="@isset(Auth::User()->email){{Auth::User()->email}}@endisset" >
 
                             </div>
@@ -166,7 +166,7 @@
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
                         <div class="form-group row row-adapt">
-                            <label for="street" class="col-md-4 col-form-label text-md-right">Улица</label>
+                            <label for="street" class="col-md-4 col-form-label text-md-right">Адрес</label>
 
                             <div class="col-md-6">
                                 <input id="street" type="street" class="form-control"

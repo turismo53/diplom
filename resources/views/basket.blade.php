@@ -19,9 +19,9 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Название</th>
-                    <th>Кол-во</th>
-                    <th>Общая цена</th>
+                    <th class="adaptive-table-basket">Название</th>
+                    <th class="adaptive-table-basket">Кол-во</th>
+                    <th class="adaptive-table-basket">Общая цена</th>
                     <th> </th>
                 </tr>
                 </thead>
@@ -29,19 +29,19 @@
                 <tbody>
                 @foreach($order->products as $product)
                 <tr>
-                    <td>
+                    <td class="adaptive-table-basket">
                         <a href="{{ route('product', [$product->category->code, $product->code]) }}">
                             <img style="height: 50px" src="{{ Storage::url($product->image) }}" alt="product">  {{$product->name}}
                         </a>
                     </td>
-                    <td><span class="badge">{{$product->pivot->count}}</span>
+                    <td class="adaptive-table-basket"><span class="badge">{{$product->pivot->count}}</span>
                         <div class="btn-group form-inline">
 
 
                         </div>
                     </td>
-                    <td>{{$product->getTotalPrice()}}р.</td>
-                    <td>
+                    <td class="adaptive-table-basket">{{$product->getTotalPrice()}}р.</td>
+                    <td class="adaptive-table-basket">
                         <form action="{{ route('basket-remove',[$product] )}}" method="POST">
                             <button type="submit" class="btn btn-danger" href="">Удалить</button>
                             @csrf

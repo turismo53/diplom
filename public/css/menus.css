@@ -264,6 +264,16 @@ html {
   }
 }
 
+@media (max-width: 360px) {
+  .container {
+    padding: 0 !important;
+  }
+
+  #main {
+    padding: 0 !important;
+  }
+}
+
 @media (max-width: 470px) {
   .order {
     padding: 12px !important;
@@ -291,6 +301,10 @@ html {
   .table th {
     padding: 0.4em;
     text-wrap: normal;
+  }
+
+  .adaptive-table-basket {
+    padding: 0 !important;
   }
 
   .ind-order {

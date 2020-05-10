@@ -28,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Blade::directive('routeactive', function ($route) {
-
             return "<?php echo Route::currentRouteNamed($route) ? 'class=\"active\"' : '' ?>";
         });
 

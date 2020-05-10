@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CategoryRequest;
@@ -40,15 +41,15 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-     
+
         $params = $request->all();
         unset(  $params['image']);
        if( $request->has('image')){
         $path = $request->file('image')->store('categories');
         $params['image'] = $path;
        }
-      
-   
+
+
         Category::create($params);
         return redirect()->route('categories.index');
     }
@@ -87,13 +88,13 @@ class CategoryController extends Controller
 
         $params = $request->all();
         unset(  $params['image']);
-                 
+
         if( $request->has('image')){
             Storage::delete($category->image);
             $path = $request->file('image')->store('categories');
             $params['image'] = $path;
            }
-      
+
         $category->update($params);
         return redirect()->route('categories.index');
     }
@@ -106,6 +107,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $products=Product::where('category_id',$category->id)->get();
+        foreach ($products as $product) {
+            $product->delete();
+        }
         $category->delete();
         return redirect()->route('categories.index');
     }
