@@ -25,9 +25,7 @@ class OrderController extends Controller
     }
 
     public function authIndividualOrder(Request $request){
-        $request->validate([
-            'image'=>'required'
-        ]);
+
         $order= Order::create();
         session(['orderId'=>$order->id]);
         $params = $request->all();
@@ -41,6 +39,7 @@ class OrderController extends Controller
     }
 
     public function individualOrder(GuestOrderRequest $data){
+
         (new MailController)->customReg($data);
         (new OrderController)->authIndividualOrder($data);
         return redirect()->route('index');

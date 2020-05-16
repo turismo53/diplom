@@ -1,6 +1,7 @@
 <?php
 
 Route::get('locale/{locale}','MainController@changeLang')->name('locale');
+Route::get('money/{money}','MainController@changeValue')->name('money');
 
 Route::get('/logout','Auth\LoginController@logout')->name('get-logout');
 
@@ -49,9 +50,6 @@ Route::middleware(['set_locale'])-> group (function(){
         });
         Route::post('/add{id}','BasketController@basketAdd')->name('basket-add');
     });
-
-
-
 
     Route::post('/send','MailController@createdAccount')->name('createAcc');
 

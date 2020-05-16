@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     public function feedback(){
         return $this->hasMany(Feedback::class);
-    }
+}
 
     public function hasCompletedOrders(){
         if(Auth::check())

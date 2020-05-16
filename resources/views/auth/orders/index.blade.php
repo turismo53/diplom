@@ -42,13 +42,13 @@
                     <td class="adaptive-admin-menu">{{ $order->phone }}</td>
                     <td class="adaptive-admin-menu">{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     @if($order->getFullPrice()!=0)
-                    <td class="adaptive-admin-menu"> {{ $order->getFullPrice() }} руб.</td>
+                    <td class="adaptive-admin-menu"> {{ round( $order->getFullPrice(),2) }}{{ $order->symbol() }}</td>
                     @else
 
                         @if($order->individual_price==null)
-                            <td class="adaptive-admin-menu">0 руб.</td>
+                            <td class="adaptive-admin-menu">0{{ $order->symbol() }}</td>
                         @else
-                        <td class="adaptive-admin-menu">{{ $order->individual_price }} руб.</td>
+                        <td class="adaptive-admin-menu">{{ round($order->individual_price(),2) }}{{$order->symbol()}}</td>
                         @endif
                         @endif
                     <td>{{ $order->status }} </td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Money;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class OrderController extends Controller
 {
 public function index(){
-    $user = Auth::user();
-  //  dd([$user->name,$user->email,$user->password]);
+
     $orders = Order::where('done',1)->paginate(5);
     return view('auth.orders.index',compact('orders'));
 
@@ -38,15 +38,8 @@ public function index(){
     {
         //dd($request);
         $params = $request->status;
-        $order->saveStatus($request->status, $request->individual_price);
+        $order->saveNewInfo($request->status, $request->individual_price);
         return view('auth.orders.show',compact('order'));
     }
-
-    public function changePrice(Request $request,Order $order ){
-        $params = $request->individual_price;
-        $order->savePrice($params);
-        return view('auth.orders.show',compact('order'));
-    }
-
 
 }

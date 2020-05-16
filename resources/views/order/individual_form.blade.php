@@ -61,7 +61,21 @@
                         </div>
                     </div>
                 </li>
+                <li>
 
+                    <div class="dropdown" >
+                        <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke; padding: 0px" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{App\Money::where('name',session('money','RUB'))->first()->symbol}}
+                        </button>
+                        <div class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">
+
+                            @foreach(App\Money::get() as $money)
+                                <a href="{{route('money',$money->name)}}"> {{$money->symbol}} </a>
+                                <br>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
             </ul>
             @guest
                 <ul class="nav navbar-nav navbar-right">
@@ -116,7 +130,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name"
-                                       value="@isset(Auth::User()->name){{Auth::User()->name}}@endisset">
+                                       value=" {{old('name',isset(Auth::User()->name)? Auth::User()->name :null)}}">
 
                             </div>
                         </div>
@@ -130,7 +144,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control"
-                                       name="email" value="@isset(Auth::User()->email){{Auth::User()->email}}@endisset" >
+                                       name="email" value="{{old('email',isset(Auth::User()->email)? Auth::User()->email :null)}}" >
 
                             </div>
                         </div>
@@ -143,7 +157,7 @@
 
                             <div class="col-md-6">
                                 <input id="phone" type="phone" class="form-control"
-                                       name="phone" value="@isset(Auth::User()->phone){{Auth::User()->phone}}@endisset" >
+                                       name="phone" value="{{old('phone',isset(Auth::User()->phone)? Auth::User()->phone :null)}}" >
 
                             </div>
                         </div>
@@ -157,7 +171,7 @@
 
                             <div class="col-md-6">
                                 <input id="city" type="phone" class="form-control"
-                                       name="city" value="@isset(Auth::User()->city){{Auth::User()->city}}@endisset" >
+                                       name="city" value="{{old('city',isset(Auth::User()->city)? Auth::User()->city :null)}}" >
 
                             </div>
                         </div>
@@ -170,7 +184,7 @@
 
                             <div class="col-md-6">
                                 <input id="street" type="street" class="form-control"
-                                       name="street" value="@isset(Auth::User()->street){{Auth::User()->street}}@endisset" >
+                                       name="street" value="{{old('street',isset(Auth::User()->street)? Auth::User()->street :null)}}" >
 
                             </div>
                         </div>
@@ -183,7 +197,7 @@
 
                             <div class="col-md-6">
                                 <input id="mail_index" type="mail_index" class="form-control"
-                                       name="mail_index" value="@isset(Auth::User()->mail_index){{Auth::User()->mail_index}}@endisset" >
+                                       name="mail_index" value="{{old('mail_index',isset(Auth::User()->mail_index)? Auth::User()->mail_index :null)}}" >
 
                             </div>
                         </div>

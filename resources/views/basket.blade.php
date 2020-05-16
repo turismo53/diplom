@@ -40,7 +40,7 @@
 
                         </div>
                     </td>
-                    <td class="adaptive-table-basket">{{$product->getTotalPrice()}}р.</td>
+                    <td class="adaptive-table-basket">{{$product->getTotalPrice()}}{{$product->symbol()}}</td>
                     <td class="adaptive-table-basket">
                         <form action="{{ route('basket-remove',[$product] )}}" method="POST">
                             <button type="submit" class="btn btn-danger" href="">Удалить</button>
@@ -52,7 +52,7 @@
                 @endforeach
                 <tr>
                     <td colspan="3">Итоговая стоимость:</td>
-                    <td>{{$order->getFullPrice()}}р.</td>
+                    <td>{{$order->getFullPrice()}}{{$product->symbol()}}</td>
                 </tr>
 
                 </tbody>

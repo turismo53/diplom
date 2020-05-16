@@ -5,7 +5,7 @@
            role="button"><img src="{{ Storage::url($product->image) }}" alt="product"></a>
         <div class="caption">
             <h3>{{$product->name}}</h3>
-            <p>{{$product->price}}р.</p>
+            <p>{{round($product->price(),2) }}{{$product->symbol()}} </p>
             <p>
             <form action="{{ route('basket-add',$product->id) }}" method="POST">
                 <button type="submit" class="btn btn-primary submit"  onclick="hide()">

@@ -2,7 +2,7 @@
 
 return [
 
-    'online_shop'=>'Online Shop',
+    'online_shop'=>'Crippled art',
     'all_products'=>'All Products',
     'categories'=>'Categories',
     'basket'=>'My Basket',

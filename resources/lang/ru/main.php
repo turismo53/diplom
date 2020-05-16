@@ -2,7 +2,7 @@
 
 return [
 
-    'online_shop'=>'Интернет магазин',
+    'online_shop'=>'Crippled art',
     'all_products'=>'Все товары',
     'categories'=>'Категории',
     'basket'=>'Корзина',

@@ -20,15 +20,7 @@ class feedbackController extends Controller
         return view('feedback.index',compact('feedbacks'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('feedback.form');
-    }
+
 
     /**
      * Store a newly created resource in storage.

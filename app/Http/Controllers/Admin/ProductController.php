@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Money;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -46,6 +47,8 @@ class ProductController extends Controller
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
         }
+        $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
+        $params['price']= $params['price'] * $currentValue;
         Product::create($params);
         return redirect()->route('products.index');
     }
@@ -88,6 +91,8 @@ class ProductController extends Controller
             Storage::delete($product->image);
             $params['image'] = $request->file('image')->store('products');
         }
+        $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
+        $params['price']= $params['price'] * $currentValue;
         $product->update($params);
         return redirect()->route('products.index');
     }

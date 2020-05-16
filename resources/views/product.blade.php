@@ -6,7 +6,7 @@
 
     <h1> {{ $tovar->name}}</h1>
     <h2>{{$tovar->category->name}}</h2>
-    <p>Цена: <b>{{$tovar->price}}p.</b></p>
+    <p>Цена: <b>{{round($tovar->price(),2) }}{{$tovar->symbol()}}</b></p>
     <img class="adaptive-product-image" src="{{ Storage::url($tovar->image) }}" style="max-width: 600px">
     <br>
     <br>
@@ -14,6 +14,7 @@
          <button type="submit" class="btn btn-success" role="button">Добавить в корзину</button>
 
            @csrf
-     </form>  <br>
+     </form>
+    <br>
 
 @endsection

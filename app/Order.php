@@ -7,20 +7,15 @@ use Illuminate\Support\Facades\Auth;
 
 class Order extends Model
 {
-    public function products(){
-
-        return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
-    }
-
-
-
+        public function products(){
+            return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
+        }
 
         public function user(){
-        return $this->belongsTo(User::class);
+            return $this->belongsTo(User::class);
         }
 
         public function getFullPrice(){
-
             $total =0;
             foreach($this->products as $product)
             {
@@ -41,15 +36,25 @@ class Order extends Model
             $this->save();
             session()->forget('orderId');
             return true;
-        }else return false;
+        }
+            return false;
         }
 
-        public function saveStatus($status,$individual_price){
+        public function saveNewInfo($status,$individual_price){
             $this->status=$status;
-            if($individual_price!=null)
-            $this->individual_price=$individual_price;
+            if($individual_price!=null) {
+                $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
+                $this->individual_price = $individual_price*$currentValue;
+            }
             $this->save();
         }
 
+        public function individual_price(){
+            $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
+            return $this->individual_price / $currentValue;
+        }
+    public function symbol(){
+        return  Money::where('name',session('money','RUB'))->first()->symbol;
+    }
 
 }

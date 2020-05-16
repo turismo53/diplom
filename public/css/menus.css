@@ -330,6 +330,19 @@ html {
   .post-text {
     font-size: 12px;
   }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .row {
+    margin: 0 !important;
+  }
+
+  img {
+    max-width: 200px;
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 810px) {

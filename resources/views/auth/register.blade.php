@@ -3,9 +3,10 @@
 @section('title', 'Регистрация')
 
 @section('content')
+
     <div class="col-md-8">
         <div class="card">
-
+<div id="main">
             <form method="POST" action="{{ route('register') }}" aria-label="Register">
                 @csrf
 
@@ -136,8 +137,8 @@
                     </div>
                 </div>
             </form>
-            <div class="card-body">
-            </div>
+</div>
         </div>
     </div>
+
 @endsection

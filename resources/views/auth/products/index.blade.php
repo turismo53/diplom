@@ -35,7 +35,7 @@
                     <td class="adaptive-admin-menu">{{ $product->code }}</td>
                     <td>{{ $product->name }}</td>
                     <td class="adaptive-admin-menu">{{ $product->category->name }}</td>
-                    <td>{{ $product->price }}</td>
+                    <td>{{round($product->price(),2)}}{{$product->symbol()}}</td>
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">

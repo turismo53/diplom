@@ -62,8 +62,6 @@ class BasketController extends Controller
         else{
             $order=Order::find($orderId);
         }
-
-        //dd($order);
         if ($order->products->contains($productId)) {
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
             $pivotRow->count++;
@@ -71,13 +69,9 @@ class BasketController extends Controller
         } else {
             $order->products()->attach($productId);
         }
-
-
         $product=Product::find($productId);
         session()->flash('success',  $product->name. __('flash.add_product') );
-
         return redirect()->route('basket');
-
     }
 
     public function basketRemove($productId){
@@ -86,7 +80,6 @@ class BasketController extends Controller
             return view('basket',compact('order'));
         }
         $order=Order::find($orderId);
-
         if ($order->products->contains($productId)) {
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
             if ($pivotRow->count < 2) {
@@ -97,15 +90,8 @@ class BasketController extends Controller
             }
         }
         $product=Product::find($productId);
-
         session()->flash('warning', $product->name . __('flash.delete_product'));
-
-
-
-
-
-
-        if ($order->products->count() == 0) {
+if ($order->products->count() == 0) {
             session()->flash('warning', __('flash.empty_basket'));
             return redirect()->route('index');
         }

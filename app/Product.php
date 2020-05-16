@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Money;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -16,8 +17,19 @@ public function category(){
 }
 
 public function getTotalPrice(){
-    return $this->price*$this->pivot->count;
+    $currentValue=Money::where('name',session('money','RUB'))->first()->factor;
+    return $this->price*$this->pivot->count/$currentValue;
 
 }
+
+
+public function price(){
+    $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
+    return $this->price / $currentValue;
+}
+
+    public function symbol(){
+        return  Money::where('name',session('money','RUB'))->first()->symbol;
+    }
 
 }

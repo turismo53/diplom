@@ -27,17 +27,14 @@ class MailController extends Controller
         for($i=7;$i<60;$i++){
             $password.=$hash2[$i];
         }
-
         return $password;
     }
 
 
     public function customReg(GuestOrderRequest $data){
+
         $data['password']=MailController::generatePassword();
 
-        Mail::send(new CreateAccOrder($data),['name','online'],function($message){
-            $message->to('turismo53@gmail.com','Customer')->subject('created account');
-        });
 
         $user=User::create([
             'name' => $data['name'],
@@ -48,6 +45,10 @@ class MailController extends Controller
             'city' => $data['city'],
             'mail_index' => $data['mail_index'],
         ]);
+
+        Mail::send(new CreateAccOrder($data),['name','online'],function($message){
+            $message->subject('created account');
+        });
         Auth::login($user);
     }
 

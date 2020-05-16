@@ -30,6 +30,7 @@ class GuestOrderRequest extends FormRequest
             'phone'=> ['required'],
             'street'=> ['required'],
             'mail_index'=> ['required'],
+            'image'=>['required']
         ];
 
         return $rules;

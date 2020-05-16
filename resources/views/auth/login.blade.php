@@ -5,6 +5,7 @@
 @section('content')
     <div class="col-md-8">
         <div class="card">
+            <div id="main">
             <div class="card-header justify-content-center align-items-center">
 
                 <p class="text-center pl-lg-5 ml-lg-5">LOGIN</p>

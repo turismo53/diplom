@@ -25,6 +25,7 @@
                             <th>Название</th>
 
                             <th>Цена</th>
+                            <th>Кол-во</th>
 
                         </thead>
                         <tbody>
@@ -38,23 +39,23 @@
                                     </a>
                                 </td>
 
-                                <td>{{ $product->price }} руб.</td>
-
+                                <td>{{round($product->price(),2) }}{{$product->symbol()}}</td>
+                                <td>{{$product->pivot->count}}</td>
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="1">Общая стоимость:</td>
-                            <td>{{ $order->getFullPrice() }} руб.</td>
+                            <td colspan="2">Общая стоимость:</td>
+                            <td>{{ round($order->getFullPrice(),2) }}{{$order->symbol()}}</td>
                         </tr>
                         <tr>
-                            <td colspan="1">Состояние заказа:</td>
+                            <td colspan="2">Состояние заказа:</td>
                             <td>{{ $order->status }}.</td>
                         </tr>
                         </tbody>
                     </table>
                     <br>
                 </div>
-            </div>
+
 
 
 
@@ -62,7 +63,7 @@
         <img height="300px"
              src="{{ Storage::url($order->image) }}">
         <br>
-        <p>Цена:  @if($order->individual_price==null) В обработке @else {{$order->individual_price}}р. @endif</p>
+        <p>Цена:  @if($order->individual_price==null) В обработке @else {{round($order->individual_price(),2)}}{{$order->symbol()}} @endif</p>
         <p>Состояние заказа: {{ $order->status }} </p>
 
 
@@ -79,16 +80,23 @@
                         <option @if($order->status=='Отправлен') selected="selected" @endif value="Отправлен"> Отправлен </option>
                     </select>
                 </div>
-
-
-
-
-                    @if($order->individual_price==null&&$order->image!=null)
+          @if($order->individual_price==null&&$order->image!=null)
                         <br>
                         <label for="individual_price" class="col-sm-12 col-form-label">Цена на портрет:</label>
                         <div class="col-sm-12">
                             <input type="number" name="individual_price" id="individual_price" class="form-control" value="{{$order->individual_price}}" min="1">
+                            <div class="dropdown" >
+                                <button style=" background-color: #f8f9fa!important; border: 0px; outline: none; color:black; padding: 0px" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{App\Money::where('name',session('money','RUB'))->first()->symbol}}
+                                </button>
+                                <div style=" background-color: #f8f9fa!important; color:black!important;" class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">
 
+                                    @foreach(App\Money::get() as $money)
+                                        <a  style="color:black!important;"href="{{route('money',$money->name)}}"> {{$money->symbol}} </a>
+                                        <br>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
 
                     @endif<br>
@@ -97,6 +105,7 @@
 
             </form>
             @endadmin
+</div>
         </div>
     </div>
     </div>

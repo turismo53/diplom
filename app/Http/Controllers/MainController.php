@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Money;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Category;
@@ -43,6 +44,13 @@ class MainController extends Controller
         session(['locale'=>$locale]);
         App::setLocale($locale);
         $currentLocale = App::getLocale();
+        return redirect()->back();
+    }
+
+    public function changeValue($code){
+      $money =  Money::where('name',$code)->first();
+      session(['money'=>$money->name]);
+      //dd(session(['money']));
         return redirect()->back();
     }
 

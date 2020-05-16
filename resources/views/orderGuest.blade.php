@@ -20,7 +20,7 @@
 
         <div class="col-md-6">
             <input id="name" type="text" class="form-control" name="name"
-                   value="">
+                   value="{{old('name',isset(Auth::User()->name)? Auth::User()->name :null)}}">
 
         </div>
     </div>
@@ -33,7 +33,7 @@
 
         <div class="col-md-6">
             <input id="email" type="email" class="form-control"
-                   name="email" value="" >
+                   name="email" value="{{old('email',isset(Auth::User()->name)? Auth::User()->name :null)}}" >
 
         </div>
     </div>
@@ -46,7 +46,7 @@
 
         <div class="col-md-6">
             <input id="phone" type="phone" class="form-control"
-                   name="phone" value="" >
+                   name="phone" value="{{old('phone',isset(Auth::User()->name)? Auth::User()->name :null)}}" >
 
         </div>
     </div>
@@ -60,7 +60,7 @@
 
         <div class="col-md-6">
             <input id="city" type="phone" class="form-control"
-                   name="city" value="" >
+                   name="city" value="{{old('city',isset(Auth::User()->name)? Auth::User()->name :null)}}" >
 
         </div>
     </div>
@@ -73,7 +73,7 @@
 
         <div class="col-md-6">
             <input id="street" type="street" class="form-control"
-                   name="street" value="" >
+                   name="street" value="{{old('street',isset(Auth::User()->name)? Auth::User()->name :null)}}" >
 
         </div>
     </div>
@@ -86,7 +86,7 @@
 
         <div class="col-md-6">
             <input id="mail_index" type="mail_index" class="form-control"
-                   name="mail_index" value="" >
+                   name="mail_index" value="{{old('mail_index',isset(Auth::User()->name)? Auth::User()->name :null)}}" >
 
         </div>
     </div>
