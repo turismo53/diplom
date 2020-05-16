@@ -11,6 +11,7 @@ class MoneySeeder extends Seeder
      */
     public function run()
     {
+        DB::table('money')->truncate();
         DB::table('money')->insert(
             [
                 'name'=>'EUR',
