@@ -9,7 +9,7 @@
                             <h1>@lang('basket.order')</h1>
     <div class="container">
         <div class="row justify-content-center">
-            <p>@lang('basket.total') <b>{{$order->getFullPrice()}}р.</b></p>
+            <p>@lang('basket.total') <b>{{round($order->getFullPrice(),2)}}{{$order->symbol()}}</b></p>
 
             @auth
 
@@ -25,7 +25,7 @@
                             </div>
                         </div>
 
-                        <br>
+
                         <div class="form-group row">
                             <label for="phone" class="control-label col-lg-3">@lang('basket.phone'): </label>
                             <div class="col-lg-7">
@@ -33,7 +33,7 @@
                             </div>
                         </div>
 
-                        <br>
+
                     <div class="form-group row">
                                 <label for="name" class="control-label  col-lg-3">Email: </label>
                                 <div class="col-lg-7">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                                             </div>
-                    <br>
+
 
                     <div class="form-group row">
                         <label for="city" class="control-label  col-lg-3">@lang('basket.city'): </label>
@@ -50,7 +50,6 @@
                         </div>
                     </div>
 
-                <br>
 
                 <div class="form-group row">
                     <label for="city" class="control-label  col-lg-3">@lang('basket.street'): </label>
@@ -59,16 +58,15 @@
                     </div>
                 </div>
 
-                <br>
 
                 <div class="form-group row">
                     <label for="city" class="control-label  col-lg-3">@lang('basket.mail_index'): </label>
+
                     <div class="col-lg-7">
                         <input type="text" name="city" id="city" value="{{@Auth::user()->mail_index}}" class="form-control">
                     </div>
                 </div>
 
-                <br>
                     @csrf
 
                 <button type="submit" class="btn btn-primary submit"  onclick="hide()">

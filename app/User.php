@@ -45,6 +45,10 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
+    public function individualOrders(){
+        return $this->hasMany(Individual_order::class);
+    }
+
     public function feedback(){
         return $this->hasMany(Feedback::class);
 }
@@ -52,7 +56,12 @@ class User extends Authenticatable
     public function hasCompletedOrders(){
         if(Auth::check())
        $orders=$this->orders;
+        $iorders=$this->individualOrders;
         foreach ($orders as $order){
+            if($order->status=='Отправлен')
+                return true;
+        }
+        foreach ($iorders as $order){
             if($order->status=='Отправлен')
                 return true;
         }

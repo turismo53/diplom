@@ -59,6 +59,21 @@
                     </div>
                 </div>
             </li>
+            <li>
+
+                <div class="dropdown" >
+                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke; padding: 0px" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{App\Money::where('name',session('money','RUB'))->first()->symbol}}
+                    </button>
+                    <div class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">
+
+                        @foreach(App\Money::get() as $money)
+                            <a href="{{route('money',$money->name)}}"> {{$money->symbol}} </a>
+                            <br>
+                        @endforeach
+                    </div>
+                </div>
+            </li>
 
         </ul>
         @guest

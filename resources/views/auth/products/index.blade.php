@@ -3,9 +3,15 @@
 @section('title', 'Товары')
 
 @section('content')
+    <div id="main" >
+        @if(session()->has('success'))
 
+            <p class="alert alert-success m-auto">{{session()->get('success')}}</p>
+        @elseif(session()->has('warning'))
+            <p class="alert alert-warning">{{session()->get('warning')}}</p>
+        @endif
     <div class="col-md-12">
-        <div id="main" >
+
         <h1>Товары</h1>
         <table class="table">
             <tbody>

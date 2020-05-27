@@ -53,8 +53,9 @@ class Order extends Model
             $currentValue = Money::where('name',session('money','RUB'))->first()->factor;
             return $this->individual_price / $currentValue;
         }
-    public function symbol(){
-        return  Money::where('name',session('money','RUB'))->first()->symbol;
-    }
+        
+        public function symbol(){
+            return  Money::where('name',session('money','RUB'))->first()->symbol;
+        }
 
 }

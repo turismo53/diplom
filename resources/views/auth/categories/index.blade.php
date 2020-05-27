@@ -4,6 +4,12 @@
 
 @section('content')
     <div id="main" class="categories-admin">
+        @if(session()->has('success'))
+
+            <p class="alert alert-success m-auto">{{session()->get('success')}}</p>
+        @elseif(session()->has('warning'))
+            <p class="alert alert-warning">{{session()->get('warning')}}</p>
+        @endif
     <div class="col-md-12">
         <h1>Категории</h1>
         <table class="table">
@@ -34,7 +40,8 @@
                                 <a class="btn btn-warning" type="button" href="{{ route('categories.edit', $category) }}">Изменить</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Удалить"></form>
+                                <input class="btn btn-danger" type="submit" value="Удалить">
+                            </form>
                         </div>
                     </td>
                 </tr>

@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('main.online_shop'): @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script  src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script
         src="https://code.jquery.com/jquery-3.5.0.min.js"
@@ -63,7 +63,7 @@
             <li>
 
                 <div class="dropdown" >
-                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke; padding: 0px" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button style="background-color: #343a40!important; border: 0px; outline: none; color:whitesmoke; padding: 0px" class=" dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       {{App\Money::where('name',session('money','RUB'))->first()->symbol}}
                     </button>
                     <div class="dropdown-menu main-menu-lang" aria-labelledby="dropdownMenuButton">
@@ -121,9 +121,9 @@
 </div>
 </div>
 <script src="/js/scroll.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+<script  src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script  src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script  src="slick/slick.min.js"></script>
 <script src="/js/slider.js"></script>
 </body>
 

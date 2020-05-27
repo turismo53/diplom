@@ -35,12 +35,9 @@
                         </a>
                     </td>
                     <td class="adaptive-table-basket"><span class="badge">{{$product->pivot->count}}</span>
-                        <div class="btn-group form-inline">
 
-
-                        </div>
                     </td>
-                    <td class="adaptive-table-basket">{{$product->getTotalPrice()}}{{$product->symbol()}}</td>
+                    <td class="adaptive-table-basket">{{round($product->getTotalPrice(),2)}}{{$product->symbol()}}</td>
                     <td class="adaptive-table-basket">
                         <form action="{{ route('basket-remove',[$product] )}}" method="POST">
                             <button type="submit" class="btn btn-danger" href="">Удалить</button>
@@ -52,7 +49,7 @@
                 @endforeach
                 <tr>
                     <td colspan="3">Итоговая стоимость:</td>
-                    <td>{{$order->getFullPrice()}}{{$product->symbol()}}</td>
+                    <td>{{round($order->getFullPrice(),2)}}{{$product->symbol()}}</td>
                 </tr>
 
                 </tbody>

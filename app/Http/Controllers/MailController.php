@@ -29,13 +29,8 @@ class MailController extends Controller
         }
         return $password;
     }
-
-
     public function customReg(GuestOrderRequest $data){
-
         $data['password']=MailController::generatePassword();
-
-
         $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -45,12 +40,12 @@ class MailController extends Controller
             'city' => $data['city'],
             'mail_index' => $data['mail_index'],
         ]);
-
         Mail::send(new CreateAccOrder($data),['name','online'],function($message){
             $message->subject('created account');
         });
         Auth::login($user);
     }
+
 
     public function createdAccount(GuestOrderRequest $data){
 

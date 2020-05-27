@@ -50,7 +50,6 @@ class MainController extends Controller
     public function changeValue($code){
       $money =  Money::where('name',$code)->first();
       session(['money'=>$money->name]);
-      //dd(session(['money']));
         return redirect()->back();
     }
 

@@ -2,7 +2,7 @@
 
 return[
     'basket'=>'Basket',
-    'order'=>'Checkout order',
+    'order'=>'Place an order',
     'delete'=>'Delete',
     'checkout'=>'Checkout',
     'info'=>'Enter info about you',
@@ -11,6 +11,7 @@ return[
     'phone'=>'Phone Number',
     'city'=>'City',
     'street'=>'Street',
-    'mail_index'=>'Mail index'
+    'mail_index'=>'Mail index',
+    'basket_add' =>'Add to basket'
 
 ];

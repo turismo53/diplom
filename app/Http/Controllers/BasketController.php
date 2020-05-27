@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Mail\OrderInfo;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Product;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class BasketController extends Controller
@@ -50,6 +53,8 @@ class BasketController extends Controller
        }else{
         session()->flash('warning','Что-то пошло не так');
        }
+
+
         return redirect()->route('index');
     }
 

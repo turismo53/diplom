@@ -124,9 +124,9 @@
                         @error('name')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt">
+                        <div class="form-group row row-adapt align-items-center">
 
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Имя</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Имя и фамилия</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name"
@@ -139,7 +139,7 @@
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
 
-                        <div class="form-group row row-adapt" @auth style="display: none" @endauth>
+                        <div class="form-group row row-adapt align-items-center" @auth style="display: none" @endauth>
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
 
                             <div class="col-md-6">
@@ -152,7 +152,7 @@
                         @error('phone')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt">
+                        <div class="form-group row row-adapt align-items-center">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">Телефон</label>
 
                             <div class="col-md-6">
@@ -166,7 +166,7 @@
                         @error('city')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt">
+                        <div class="form-group row row-adapt align-items-center">
                             <label for="city" class="col-md-4 col-form-label text-md-right">Город</label>
 
                             <div class="col-md-6">
@@ -179,7 +179,7 @@
                         @error('street')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt">
+                        <div class="form-group row row-adapt align-items-center">
                             <label for="street" class="col-md-4 col-form-label text-md-right">Адрес</label>
 
                             <div class="col-md-6">
@@ -192,7 +192,7 @@
                         @error('mail_index')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt">
+                        <div class="form-group row row-adapt align-items-center">
                             <label for="mail_index" class="col-md-4 col-form-label text-md-right">Почтовый индекс</label>
 
                             <div class="col-md-6">

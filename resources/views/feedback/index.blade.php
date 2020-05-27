@@ -5,23 +5,17 @@
 @section('content')
 
     @completedOrder
-
-
     <form method="POST" enctype="multipart/form-data"  action="{{ route('feedback.store') }}">
         @error('text')
         <div class=" alert alert-danger"> {{$message}} </div>
         @enderror
-
-            <label for="text">Текст отзыва: </label>
+     <label for="text">Текст отзыва: </label>
             <div class="">
                 <textarea type="text" class="form-control w-100" name="text" id="text"
                        value="" rows="10"  placeholder="Введите текст отзыва"></textarea>
             </div>
-
         <br>
         @csrf
-
-
         <button type="submit" class="btn btn-primary" id="submit" onclick="hide()">
             Сохранить
         </button>
@@ -33,10 +27,8 @@
             }
         </script>
     </form>
-
-<br>
     @endcompletedOrder
-
+    <br>
 @foreach($feedbacks as $feedback)
 
 

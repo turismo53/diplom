@@ -19,7 +19,6 @@ public function category(){
 public function getTotalPrice(){
     $currentValue=Money::where('name',session('money','RUB'))->first()->factor;
     return $this->price*$this->pivot->count/$currentValue;
-
 }
 
 

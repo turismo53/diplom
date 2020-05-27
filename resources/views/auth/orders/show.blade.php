@@ -13,7 +13,7 @@
                     <h1>Заказ №{{ $order->id }}</h1>
                     <p>Заказчик: <b>{{ $order->name }}</b></p>
                     <p>Номер телефона: <b>{{ $order->phone }}</b></p>
-                    <p>Улица: <b>{{ $order->adres }}</b></p>
+                    <p>Улица: <b>{{ $order->user->street }}</b></p>
                     <p>Город: <b>{{ $order->user->city }}</b></p>
                     <p>Почтовый индекс: <b>{{ $order->user->mail_index }}</b></p>
 
@@ -51,6 +51,18 @@
                             <td colspan="2">Состояние заказа:</td>
                             <td>{{ $order->status }}.</td>
                         </tr>
+                        @if($order->status=='Ожидается оплата')
+                            @if(Auth::User()->is_admin==false)
+                        <tr>
+                            <td colspan="2">Текст оплаты:</td>
+                            <td>Оплачиваю заказ номер {{$order->id}}.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Счет для перевода:</td>
+                            <td>R1234567890</td>
+                        </tr>
+                            @endif
+                            @endif
                         </tbody>
                     </table>
                     <br>
@@ -60,12 +72,18 @@
 
 
     @else
-        <img height="300px"
-             src="{{ Storage::url($order->image) }}">
+        <img height="300px" src="{{ Storage::url($order->image) }}">
         <br>
         <p>Цена:  @if($order->individual_price==null) В обработке @else {{round($order->individual_price(),2)}}{{$order->symbol()}} @endif</p>
         <p>Состояние заказа: {{ $order->status }} </p>
-
+        @if($order->status=='Ожидается оплата')
+        @if($order->individual_price!=null)
+            @if(Auth::User()->is_admin==false)
+                <p>Текст оплаты: Оплачиваю заказ номер {{ $order->id }}. </p>
+                <p>Номер перевода: R123456789 </p>
+            @endif
+            @endif
+        @endif
 
     @endif
             @admin

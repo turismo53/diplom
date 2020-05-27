@@ -116,12 +116,7 @@
         <div class="container">
             <div class="row justify-content-center">
 
-            @if(session()->has('success'))
 
-                <p class="alert alert-success m-auto">{{session()->get('success')}}</p>
-                @elseif(session()->has('warning'))
-                <p class="alert alert-warning">{{session()->get('warning')}}</p>
-                @endif
 
                 @yield('content')
             </div>

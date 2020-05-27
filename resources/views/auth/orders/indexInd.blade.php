@@ -14,36 +14,36 @@
     <div class="col-md-12 ">
 
 
-        @if(Auth::User()->is_admin==true)
-            <a class="btn btn-success" type="button"
-               href="
+            @if(Auth::User()->is_admin==true)
+                <a class="btn btn-success" type="button"
+                   href="
                {{route('home')}}
 
-                   ">Покупка</a>
-            <a class="btn btn-success" type="button"
-               href="
+                       ">Покупка</a>
+                <a class="btn btn-success" type="button"
+                   href="
 
                {{route('homeInd')}}
 
-                   ">Заказы</a>
+                       ">Заказы</a>
 
-        @else
-            <a class="btn btn-success" type="button"
-               href="
+            @else
+                <a class="btn btn-success" type="button"
+                   href="
                {{route('order.index.person')}}
 
-                   ">Покупка</a>
-            <a class="btn btn-success" type="button"
-               href="
+                       ">Покупка</a>
+                <a class="btn btn-success" type="button"
+                   href="
 
                {{route('order.indexInd.person')}}
 
-                   ">Заказы</a>
+                       ">Заказы</a>
 
-        @endif
+            @endif
 
-        <h1 class="text-center">Покупка</h1>
-        @if($orders->total()==0)
+        <h1 class="text-center">Заказы</h1>
+        @if($orders_i->total()==0)
             <h2 class="text-center">Пока ничего нет</h2>
             @else
         <table class="table">
@@ -71,31 +71,32 @@
 
                 </th>
             </tr>
-            @foreach($orders as $order)
+            @foreach($orders_i as $order_i)
                 <tr>
-                    <td>{{ $order->id}}</td>
-                    <td class="adaptive-admin-menu">{{ $order->name }}</td>
-                    <td class="adaptive-admin-menu">{{ $order->phone }}</td>
-                    <td class="adaptive-admin-menu">{{ $order->created_at->format('H:i d/m/Y') }}</td>
-                    @if($order->getFullPrice()!=0)
-                    <td class="adaptive-admin-menu"> {{ round( $order->getFullPrice(),2) }}{{ $order->symbol() }}</td>
+                    <td>{{ $order_i->id}}</td>
+                    <td class="adaptive-admin-menu">{{ $order_i->user->name }}</td>
+                    <td class="adaptive-admin-menu">{{ $order_i->user->phone }}</td>
+                    <td class="adaptive-admin-menu">{{ $order_i->created_at->format('H:i d/m/Y') }}</td>
+                    @if($order_i->price()!=0)
+
+                        <td class="adaptive-admin-menu"> {{ round( $order_i->price(),2) }}{{ $order_i->symbol() }}</td>
                     @else
 
-                        @if($order->individual_price==null)
-                            <td class="adaptive-admin-menu">0{{ $order->symbol() }}</td>
+                        @if($order_i->individual_price==null)
+                            <td class="adaptive-admin-menu">В обработке</td>
                         @else
-                        <td class="adaptive-admin-menu">{{ round($order->individual_price(),2) }}{{$order->symbol()}}</td>
+                            <td class="adaptive-admin-menu">{{ round($order_i->individual_price(),2) }}{{$order->symbol()}}</td>
                         @endif
-                        @endif
-                    <td>{{ $order->status }} </td>
+                    @endif
+                    <td>{{ $order_i->status }} </td>
                     <td>
                         <div class="btn-group" role="group">
                             <a class="btn btn-success" type="button"
                                href="
                                 @admin
-                               {{route('orders.show',$order)}}
-                                   @else
-                               {{route('orders.show.person',$order)}}
+                               {{route('orders.show_i',$order_i)}}
+                               @else
+                               {{route('orders.show_i.person',$order_i)}}
                                @endadmin
                                    ">Открыть</a>
                         </div>
@@ -108,7 +109,7 @@
 
 
         @endif
-{{$orders->links()}}
+{{$orders_i->links()}}
     </div>
     </div>
 @endsection
