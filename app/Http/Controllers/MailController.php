@@ -30,6 +30,7 @@ class MailController extends Controller
         return $password;
     }
     public function customReg(GuestOrderRequest $data){
+
         $data['password']=MailController::generatePassword();
         $user=User::create([
             'name' => $data['name'],

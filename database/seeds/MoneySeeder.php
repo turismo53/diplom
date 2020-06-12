@@ -21,18 +21,14 @@ class MoneySeeder extends Seeder
             ]
         );
         DB::table('money')->insert(
-
             [
                 'name'=>'USD',
                 'symbol'=>'$',
                 'main_currency'=>0,
                 'factor' => 74
             ]
-
         );
         DB::table('money')->insert(
-
-
             [
                 'name'=>'RUB',
                 'symbol'=>'Р',

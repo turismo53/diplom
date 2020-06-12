@@ -1,8 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/menus.css": "/css/menus.css",
-    "/js/onload.js": "/js/onload.js",
-    "/js/scroll.js": "/js/scroll.js",
-    "/js/slider.js": "/js/slider.js"
+    "/css/app.css": "/css/app.css"
 }

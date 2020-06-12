@@ -50,14 +50,12 @@ public function index(){
 
     public function update(Request $request, Order $order)
     {
-
         $order->saveNewInfo($request->status, $request->individual_price);
         return redirect()->route('orders.show',$order);
     }
 
     public function update_i(Request $request,  $order)
     {
-
         $order_i = Individual_order::where('id',$order)->first();
         $order_i->saveNewInfo($request->status, $request->individual_price);
         return redirect()->route('orders.show_i',$order_i);

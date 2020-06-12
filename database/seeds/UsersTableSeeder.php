@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
 
         DB::table('users')->insert([
-           'name'=> 'Admin',
+            'name'=> 'Admin',
             'email'=> 'admin@admin.admin',
             'password'=>bcrypt('admin'),
             'is_admin'=>1,

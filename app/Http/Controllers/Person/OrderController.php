@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Person;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MailController;
 use App\Http\Requests\GuestOrderRequest;
+use App\Http\Requests\IndividualOrderRequest;
 use App\Individual_order;
 use App\Order;
 use Illuminate\Http\Request;
@@ -55,7 +56,9 @@ class OrderController extends Controller
     }
 
     public function individualOrder(GuestOrderRequest $data){
-
+        $data->validate([
+            'image' => 'required'
+        ]);
         (new MailController)->customReg($data);
         (new OrderController)->authIndividualOrder($data);
         return redirect()->route('index');

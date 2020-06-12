@@ -43,10 +43,12 @@ class BasketController extends Controller
     public function basketConfirm( Request $request){
 
         $orderId = session('orderId');
+
         if(is_null($orderId)){
             return redirect()->route('index');
         }
         $order=Order::find($orderId);
+
        $success=$order->saveOrder($request['name'],$request['phone'],$request['city'],$request['image']);
        if( $success){
         session()->flash('success','Ваш заказ успешно добавлен в очередь');

@@ -12,5 +12,5 @@ return[
     'city'=>'Город',
     'street'=>'Улица',
     'mail_index'=>'Почтовый индекс',
-    'basket_add' =>'В корзину'
+    'basket_add' =>'В корзину',
 ];
