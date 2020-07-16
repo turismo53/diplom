@@ -37,6 +37,11 @@ Route::middleware(['set_locale'])-> group (function(){
 });
     });
     Route::get('/','MainController@index')->name('index');
+    Route::get('get-json','MainController@getJson');
+    Route::get('data-chart','MainController@dataChart');
+    Route::get('data-random','MainController@dataRandom');
+    Route::get('socket-chart','RedisController@newEvent');
+    Route::get('socket-message','RedisController@newMessage');
     Route::group(['prefix'=>'basket'],function (){
         Route::group(['middleware'=>'basket_not_empty'], function (){
             Route::get('/','BasketController@basket')->name('basket');

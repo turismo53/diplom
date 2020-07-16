@@ -2,11 +2,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@lang('main.online_shop'): @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -24,12 +22,11 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js" async defe></script>
+
 
 </head>
 <body>
-
-
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -100,7 +97,9 @@
 </nav>
 
 
-
+<div id="app">
+<socket-chat></socket-chat>
+</div>
 
 <div class="starter-template">
     <div class="container">

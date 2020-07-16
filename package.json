@@ -22,5 +22,15 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "babel-polyfill": "^6.26.0",
+        "chart.js": "^2.9.3",
+        "express": "^4.17.1",
+        "ioredis": "^4.17.3",
+        "socket.io": "^2.3.0",
+        "socket.io-client": "^2.3.0",
+        "vue-chartjs": "^3.5.0",
+        "whatwg-fetch": "^3.2.0"
     }
 }

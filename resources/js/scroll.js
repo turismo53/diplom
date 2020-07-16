@@ -7,7 +7,6 @@ $(window).scroll(function () {
 });
 
 $("#back-to-top").on("click touchstart", function() {
-
     $(window).scrollTop(0);
 });
 

@@ -7,16 +7,18 @@
 
 
 
+
+
     <div class="slider">
 
-    @foreach($products as $product)
 
-    @include('card', compact('product'))
+        @foreach($products as $product)
 
-    @endforeach
+            @include('card', compact('product'))
 
-        </div>
+        @endforeach
 
+    </div>
 
 
 

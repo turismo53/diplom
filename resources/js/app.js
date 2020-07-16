@@ -3,6 +3,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import "babel-polyfill";
+import 'whatwg-fetch';
 
 require('./bootstrap');
 
@@ -20,7 +22,13 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('prop-component', require('./components/PropComponent.vue').default);
+Vue.component('ajax-component', require('./components/AjaxComponent.vue').default);
+Vue.component('chartline-component', require('./components/ChartlineComponent').default);
+Vue.component('chartpie-component', require('./components/ChartpieComponent').default);
+Vue.component('chartrandom-component', require('./components/ChartrandomComponent').default);
+Vue.component('socket-component', require('./components/SocketComponent').default);
+Vue.component('socket-chat', require('./components/SocketchatComponent').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
