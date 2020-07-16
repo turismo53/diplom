@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'email'=> 'admin@admin.admin',
             'password'=>bcrypt('admin'),
             'is_admin'=>1,
+            'email_verified_at'=>'2020-07-07 14:04:22'
         ]);
     }
 }
