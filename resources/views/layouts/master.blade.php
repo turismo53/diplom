@@ -22,7 +22,7 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <script src="/js/app.js" async defe></script>
+    <script src="/js/app.js" async defer></script>
 
 
 </head>

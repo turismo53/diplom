@@ -35,6 +35,10 @@ Vue.component('socket-chat', require('./components/SocketchatComponent').default
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+
+
+window.addEventListener('load', function () {
+    const app = new Vue({
+        el: '#app',
+    });
+})

@@ -38,6 +38,7 @@ class RedisController extends Controller
           if($user==null) $user="anonymous";
           else $user=$user->name;
           event( new \App\Events\MessageEvent($request->input('message'),$user));
+
     }
 
 }

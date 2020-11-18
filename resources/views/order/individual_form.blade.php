@@ -124,16 +124,7 @@
                         @error('name')
                         <div class=" alert alert-danger"> {{$message}} </div>
                         @enderror
-                        <div class="form-group row row-adapt align-items-center">
-
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Имя и фамилия</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name"
-                                       value=" {{old('name',isset(Auth::User()->name)? Auth::User()->name :null)}}">
-
-                            </div>
-                        </div>
+                       у о
 
                         @error('email')
                         <div class=" alert alert-danger"> {{$message}} </div>
